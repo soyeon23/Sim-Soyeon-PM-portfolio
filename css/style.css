@@ -417,6 +417,23 @@ h6 {
     display: none;
 }
 
+.hero-note {
+    margin-top: var(--space-8);
+    font-size: var(--text-sm);
+    color: var(--color-tertiary);
+    padding: var(--space-3) var(--space-5);
+    background: var(--color-bg-tertiary);
+    border-radius: var(--radius-md);
+    display: inline-block;
+    animation: fadeInUp 0.5s ease 0.25s forwards;
+    opacity: 0;
+}
+
+.hero-note strong {
+    color: var(--color-accent);
+    font-weight: 600;
+}
+
 .hero-scroll {
     position: absolute;
     bottom: var(--space-8);
