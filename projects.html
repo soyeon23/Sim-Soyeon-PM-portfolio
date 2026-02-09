@@ -148,6 +148,15 @@
                                     <strong>분석 방법:</strong> 사용자 행동 로그 기반 이탈/전환 분기점 도출<br>
                                     <strong>산출물:</strong> 전환 개입 전략 설계 문서, 타겟 사용자 정의 기준
                                 </p>
+                                <!-- 산출물 이미지 영역 -->
+                                <div class="output-images" style="margin-top: var(--space-4);">
+                                    <p style="font-size: 0.8125rem; color: var(--color-tertiary); margin-bottom: var(--space-3);">산출물 미리보기</p>
+                                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-3);">
+                                        <div class="output-placeholder" style="aspect-ratio: 4/3; background: var(--color-bg); border: 1px dashed var(--color-border); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: var(--color-tertiary); font-size: 0.75rem;">이미지 1</div>
+                                        <div class="output-placeholder" style="aspect-ratio: 4/3; background: var(--color-bg); border: 1px dashed var(--color-border); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: var(--color-tertiary); font-size: 0.75rem;">이미지 2</div>
+                                        <div class="output-placeholder" style="aspect-ratio: 4/3; background: var(--color-bg); border: 1px dashed var(--color-border); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: var(--color-tertiary); font-size: 0.75rem;">이미지 3</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -224,6 +233,15 @@
                                     <strong>분석 방법:</strong> 리뷰·평점 변동성 패턴 분석, 위험 신호 임계치 설정<br>
                                     <strong>산출물:</strong> 운영 리스크 판단 프레임, 대응 프로세스 플로우차트
                                 </p>
+                                <!-- 산출물 이미지 영역 -->
+                                <div class="output-images" style="margin-top: var(--space-4);">
+                                    <p style="font-size: 0.8125rem; color: var(--color-tertiary); margin-bottom: var(--space-3);">산출물 미리보기</p>
+                                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-3);">
+                                        <div class="output-placeholder" style="aspect-ratio: 4/3; background: var(--color-bg); border: 1px dashed var(--color-border); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: var(--color-tertiary); font-size: 0.75rem;">이미지 1</div>
+                                        <div class="output-placeholder" style="aspect-ratio: 4/3; background: var(--color-bg); border: 1px dashed var(--color-border); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: var(--color-tertiary); font-size: 0.75rem;">이미지 2</div>
+                                        <div class="output-placeholder" style="aspect-ratio: 4/3; background: var(--color-bg); border: 1px dashed var(--color-border); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: var(--color-tertiary); font-size: 0.75rem;">이미지 3</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -251,10 +269,21 @@
                         </p>
                     </div>
 
-                    <!-- Dashboard Image -->
-                    <div class="project-section">
-                        <div class="project-image">
-                            <img src="images/dashboard project.png" alt="학습 현황 진단 대시보드 스크린샷" loading="lazy">
+                    <!-- Dashboard Image Accordion -->
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>대시보드 이미지 미리보기</span>
+                            <svg class="accordion-icon" viewBox="0 0 20 20" fill="none">
+                                <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="accordion-body">
+                                <div class="project-image">
+                                    <img src="images/dashboard project.png" alt="학습 현황 진단 대시보드 스크린샷" loading="lazy">
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -331,34 +360,44 @@
                         </ul>
                     </div>
 
-                    <div class="project-section">
-                        <h4 class="project-section-title">주요 화면</h4>
-                        <style>
-                            .edutrend-grid {
-                                display: grid;
-                                grid-template-columns: repeat(2, 1fr);
-                                gap: var(--space-4);
-                                margin-bottom: var(--space-4);
-                            }
+                    <!-- EduTrend Finder Screenshots Accordion -->
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>주요 화면 미리보기</span>
+                            <svg class="accordion-icon" viewBox="0 0 20 20" fill="none">
+                                <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="accordion-body">
+                                <style>
+                                    .edutrend-grid {
+                                        display: grid;
+                                        grid-template-columns: repeat(2, 1fr);
+                                        gap: var(--space-4);
+                                    }
 
-                            .edutrend-grid img {
-                                width: 100%;
-                                height: auto;
-                                border-radius: var(--radius-md);
-                                border: 1px solid var(--color-border);
-                                transition: transform var(--transition-base);
-                            }
+                                    .edutrend-grid img {
+                                        width: 100%;
+                                        height: auto;
+                                        border-radius: var(--radius-md);
+                                        border: 1px solid var(--color-border);
+                                        transition: transform var(--transition-base);
+                                    }
 
-                            .edutrend-grid img:hover {
-                                transform: scale(1.02);
-                                box-shadow: var(--shadow-md);
-                            }
-                        </style>
-                        <div class="edutrend-grid">
-                            <img src="images/EduTrend Finder 1.png" alt="EduTrend Finder 화면 1" loading="lazy">
-                            <img src="images/EduTrend Finder 2.png" alt="EduTrend Finder 화면 2" loading="lazy">
-                            <img src="images/EduTrend Finder 3.png" alt="EduTrend Finder 화면 3" loading="lazy">
-                            <img src="images/EduTrend Finder 4.png" alt="EduTrend Finder 화면 4" loading="lazy">
+                                    .edutrend-grid img:hover {
+                                        transform: scale(1.02);
+                                        box-shadow: var(--shadow-md);
+                                    }
+                                </style>
+                                <div class="edutrend-grid">
+                                    <img src="images/EduTrend Finder 1.png" alt="EduTrend Finder 화면 1" loading="lazy">
+                                    <img src="images/EduTrend Finder 2.png" alt="EduTrend Finder 화면 2" loading="lazy">
+                                    <img src="images/EduTrend Finder 3.png" alt="EduTrend Finder 화면 3" loading="lazy">
+                                    <img src="images/EduTrend Finder 4.png" alt="EduTrend Finder 화면 4" loading="lazy">
+                                </div>
+                            </div>
                         </div>
                     </div>
 
