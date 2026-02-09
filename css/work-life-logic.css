@@ -1,0 +1,382 @@
+/* ============================================
+   Work-Life Logic Page Styles
+   ============================================ */
+
+/* Intro Section */
+.wll-intro {
+    background: var(--color-white);
+    padding: var(--space-16) 0;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.wll-intro-content {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.wll-quote {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: var(--space-6);
+    position: relative;
+    padding: 0 var(--space-4);
+}
+
+.wll-quote::before,
+.wll-quote::after {
+    content: '"';
+    color: var(--color-accent);
+    font-size: 2rem;
+    font-weight: 700;
+    opacity: 0.3;
+    position: absolute;
+}
+
+.wll-quote::before {
+    left: -0.5rem;
+    top: -0.5rem;
+}
+
+.wll-quote::after {
+    content: '"';
+    right: -0.5rem;
+    bottom: -0.5rem;
+}
+
+.wll-intro-text {
+    font-size: 1rem;
+    color: var(--color-secondary);
+    line-height: 1.8;
+}
+
+.wll-intro-text strong {
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+/* Cards Section */
+.wll-cards-section {
+    background: var(--color-bg);
+    padding: var(--space-16) 0;
+}
+
+/* Individual Card */
+.wll-card {
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    margin-bottom: var(--space-8);
+    overflow: hidden;
+    transition: all var(--transition-base);
+}
+
+.wll-card:hover {
+    border-color: var(--color-accent);
+    box-shadow: var(--shadow-lg);
+}
+
+.wll-card:last-child {
+    margin-bottom: 0;
+}
+
+/* Card Header */
+.wll-card-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-5);
+    padding: var(--space-8);
+    background: var(--color-bg);
+    border-bottom: 1px solid var(--color-border);
+    flex-wrap: wrap;
+}
+
+.wll-card-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-accent);
+    color: var(--color-white);
+    font-size: 0.875rem;
+    font-weight: 700;
+    border-radius: var(--radius-lg);
+    flex-shrink: 0;
+}
+
+.wll-card-title-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+}
+
+.wll-card-title {
+    font-size: 1.375rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    letter-spacing: -0.01em;
+}
+
+.wll-card-subtitle {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.wll-card-tagline {
+    margin-left: auto;
+    font-size: 0.875rem;
+    color: var(--color-white);
+    font-style: normal;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: var(--space-2) var(--space-5);
+    background: #0057ff;
+    border-radius: var(--radius-full);
+    border: none;
+}
+
+/* Card Body */
+.wll-card-body {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: var(--space-8);
+    padding: var(--space-8);
+}
+
+/* Card Content - Logic Grid */
+.wll-card-content {
+    flex: 1;
+}
+
+.wll-logic-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-4);
+}
+
+.wll-logic-item {
+    padding: var(--space-5);
+    background: var(--color-bg);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+    transition: all var(--transition-fast);
+}
+
+.wll-logic-item:hover {
+    border-color: var(--color-accent);
+}
+
+.wll-logic-transfer {
+    grid-column: 1 / -1;
+    background: var(--color-accent-light);
+    border-color: var(--color-accent);
+}
+
+.wll-logic-label {
+    display: inline-block;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-accent);
+    padding: var(--space-1) var(--space-2);
+    background: var(--color-white);
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--space-3);
+}
+
+.wll-logic-transfer .wll-logic-label {
+    background: var(--color-accent);
+    color: var(--color-white);
+}
+
+.wll-logic-text {
+    font-size: 0.875rem;
+    color: var(--color-secondary);
+    line-height: 1.7;
+}
+
+.wll-logic-text strong {
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+/* Card Images */
+.wll-card-images {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.wll-image-slot {
+    flex: 1;
+    min-height: 140px;
+}
+
+.wll-image-placeholder {
+    width: 100%;
+    height: 100%;
+    min-height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-bg);
+    border: 2px dashed var(--color-border);
+    border-radius: var(--radius-lg);
+    color: var(--color-tertiary);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    transition: all var(--transition-fast);
+}
+
+.wll-image-placeholder:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+}
+
+.wll-image-slot img {
+    width: 100%;
+    height: 100%;
+    min-height: 140px;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+}
+
+/* Video Slot */
+.wll-video-slot {
+    flex: 1;
+    min-height: 140px;
+}
+
+.wll-video-slot video {
+    width: 100%;
+    height: 100%;
+    min-height: 140px;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+    background: var(--color-bg);
+}
+
+/* Summary Section */
+.wll-summary {
+    background: var(--color-primary);
+    padding: var(--space-16) 0;
+}
+
+.wll-summary-content {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.wll-summary-label {
+    display: inline-block;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-accent);
+    padding: var(--space-1) var(--space-3);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-full);
+    margin-bottom: var(--space-6);
+}
+
+.wll-summary-text {
+    font-size: 1.125rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.9;
+}
+
+.wll-summary-text strong {
+    color: var(--color-white);
+    font-weight: 600;
+}
+
+.wll-highlight {
+    display: inline-block;
+    margin-top: var(--space-2);
+    padding: var(--space-2) var(--space-4);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-md);
+    color: var(--color-white);
+    font-weight: 500;
+}
+
+/* ============================================
+   Responsive
+   ============================================ */
+@media (max-width: 1024px) {
+    .wll-card-body {
+        grid-template-columns: 1fr;
+    }
+
+    .wll-card-images {
+        flex-direction: row;
+    }
+
+    .wll-image-slot {
+        min-height: 160px;
+    }
+}
+
+@media (max-width: 768px) {
+    .wll-intro {
+        padding: var(--space-12) 0;
+    }
+
+    .wll-quote {
+        font-size: 1.25rem;
+    }
+
+    .wll-cards-section {
+        padding: var(--space-12) 0;
+    }
+
+    .wll-card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-4);
+        padding: var(--space-6);
+    }
+
+    .wll-card-tagline {
+        margin-left: 0;
+    }
+
+    .wll-card-body {
+        padding: var(--space-6);
+    }
+
+    .wll-logic-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .wll-logic-transfer {
+        grid-column: 1;
+    }
+
+    .wll-card-images {
+        flex-direction: column;
+    }
+
+    .wll-summary {
+        padding: var(--space-12) 0;
+    }
+
+    .wll-summary-text {
+        font-size: 1rem;
+    }
+
+    .wll-summary-text br {
+        display: none;
+    }
+}
