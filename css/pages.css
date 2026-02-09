@@ -388,19 +388,18 @@
 }
 
 .decision-rationale strong {
-    display: block;
-    font-size: 0.6875rem;
+    display: inline;
+    font-size: inherit;
     font-weight: 600;
     color: var(--color-accent);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: var(--space-2);
+    letter-spacing: normal;
 }
 
 .decision-rationale p {
     font-size: 0.875rem;
     color: var(--color-secondary);
     line-height: 1.7;
+    word-break: keep-all;
 }
 
 /* Result Grid */
