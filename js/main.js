@@ -108,14 +108,33 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Smooth scroll for anchor links
+    // Project TOC sticky shadow effect
+    const projectToc = document.querySelector('.project-toc');
+    if (projectToc) {
+        const tocOriginalTop = projectToc.offsetTop;
+        const navHeight = nav.offsetHeight;
+
+        const handleTocSticky = () => {
+            if (window.scrollY > tocOriginalTop - navHeight) {
+                projectToc.classList.add('is-sticky');
+            } else {
+                projectToc.classList.remove('is-sticky');
+            }
+        };
+
+        window.addEventListener('scroll', handleTocSticky, { passive: true });
+    }
+
+    // Smooth scroll for anchor links (accounting for sticky TOC)
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
                 const navHeight = document.querySelector('.nav').offsetHeight;
-                const targetPosition = target.getBoundingClientRect().top + window.scrollY - navHeight - 20;
+                const toc = document.querySelector('.project-toc');
+                const tocHeight = toc ? toc.offsetHeight : 0;
+                const targetPosition = target.getBoundingClientRect().top + window.scrollY - navHeight - tocHeight - 20;
 
                 window.scrollTo({
                     top: targetPosition,

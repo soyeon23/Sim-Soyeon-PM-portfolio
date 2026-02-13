@@ -37,8 +37,16 @@
    ============================================ */
 .project-toc {
     background: var(--color-bg-secondary);
-    padding: var(--space-8) 0;
+    padding: var(--space-6) 0;
     border-bottom: 1px solid var(--color-border);
+    position: sticky;
+    top: var(--nav-height);
+    z-index: 100;
+    transition: box-shadow var(--transition-fast);
+}
+
+.project-toc.is-sticky {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .toc-title {
@@ -96,12 +104,29 @@
 }
 
 @media (max-width: 768px) {
+    .project-toc {
+        padding: var(--space-4) 0;
+    }
+
+    .toc-title {
+        margin-bottom: var(--space-3);
+    }
+
     .toc-list {
         flex-direction: column;
+        gap: var(--space-2);
     }
 
     .toc-item {
         width: 100%;
+        padding: var(--space-2) var(--space-3);
+        font-size: 0.8125rem;
+    }
+
+    .toc-number {
+        width: 18px;
+        height: 18px;
+        font-size: 0.625rem;
     }
 }
 
