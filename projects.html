@@ -492,6 +492,202 @@
                 </div>
             </article>
 
+            <!-- Project 5 -->
+            <article class="project-card" id="project-chatbot">
+                <div class="project-card-header">
+                    <span class="project-category">실무 자동화 & AI 도구 개발</span>
+                    <h3 class="project-title">연구행정 법령 기반 RAG 챗봇 개발</h3>
+                    <p class="project-subtitle">2026.03 ~ | 이엠포커스 재직 중 자체 개발·업무 적용</p>
+                </div>
+
+                <div class="project-content">
+                    <div class="project-section">
+                        <h4 class="project-section-title">Overview</h4>
+                        <p class="project-section-text">
+                            R&D 과제 수행 중 반복되는 연구행정 법령 질의응답(국가연구개발혁신법 관련 규정·지침 등)을
+                            매번 문서를 직접 찾아야 하는 비효율을 해결하기 위해,
+                            <strong>PDF·HWP 매뉴얼·법령 문서를 학습한 보수형 RAG 챗봇</strong>을 직접 개발하고 실무에 적용했습니다.
+                            근거 없이 답변하지 않으며, 모든 출처(문서명·조문·페이지)를 명시하는 것을 핵심 원칙으로 설계했습니다.
+                        </p>
+                    </div>
+
+                    <div class="project-section">
+                        <h4 class="project-section-title">주요 역할</h4>
+                        <ul class="role-list">
+                            <li>반복 질의응답 비효율을 문제로 정의하고, RAG 아키텍처로 해결 방향 설계</li>
+                            <li>질의 유형(일반 토픽·페이지 조회·조문 조회·비교형) 분류 및 라우팅 로직 설계</li>
+                            <li>Qdrant 벡터 DB 기반 하이브리드 검색(의미 검색 + 텍스트 검색) 구현</li>
+                            <li>법제처 MCP·HWP MCP 연동으로 문서 파싱 커버리지 확대</li>
+                            <li>Claude Code를 활용한 4-에이전트(PM·Backend·Frontend·Scout) 개발팀 구조로 빠른 반복 개발</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-section">
+                        <h4 class="project-section-title">주요 결과</h4>
+                        <div class="result-grid">
+                            <div class="result-item">
+                                <span class="result-metric">적용</span>
+                                <span class="result-label">실무 업무에 직접 도입</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-metric">100%</span>
+                                <span class="result-label">출처 명시 (문서명·조문·페이지)</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-metric">자동화</span>
+                                <span class="result-label">반복 법령 질의응답 처리</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-section">
+                        <h4 class="project-section-title">핵심 설계 원칙</h4>
+                        <div class="scenario-box">
+                            <p class="scenario-text">
+                                <strong>근거 없이 답변하지 않는다.</strong><br>
+                                할루시네이션 방지를 위해 검색된 문서 내 근거가 없으면 답변을 생성하지 않도록 설계했습니다.
+                                법령·행정 도메인 특성상 부정확한 답변이 업무 오류로 직결되기 때문입니다.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="project-section">
+                        <h4 class="project-section-title">프로젝트 링크</h4>
+                        <a href="https://github.com/soyeon23/chat-bot" target="_blank" class="btn btn-secondary" style="display: inline-flex;">
+                            GitHub
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path d="M6 3H3V13H13V10M9 3H13M13 3V7M13 3L7 9" stroke="currentColor"
+                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>구현 방식 보기</span>
+                            <svg class="accordion-icon" viewBox="0 0 20 20" fill="none">
+                                <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="accordion-body">
+                                <p>
+                                    <strong>사용 기술:</strong> Python, Streamlit, Qdrant, ko-sroberta-multitask, pdfplumber, Tesseract OCR<br>
+                                    <strong>AI 연동:</strong> Claude Code (OAuth 인증), MCP (법제처·HWP)<br>
+                                    <strong>검색 방식:</strong> 하이브리드 검색 (벡터 의미 검색 + 텍스트 검색 도구)<br>
+                                    <strong>산출물:</strong> 실무 적용 RAG 챗봇, 질의 유형별 라우팅 로직, 4-에이전트 개발 구조
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project 6 -->
+            <article class="project-card" id="project-seeyouwhen">
+                <div class="project-card-header">
+                    <span class="project-category">서비스 기획 & 웹서비스 개발·배포</span>
+                    <h3 class="project-title">언제볼래: 모임 일정·중간 장소 조율 웹서비스</h3>
+                    <p class="project-subtitle">2026 | 기획·개발·배포 1인 완수</p>
+                </div>
+
+                <div class="project-content">
+                    <div class="project-section">
+                        <h4 class="project-section-title">Overview</h4>
+                        <p class="project-section-text">
+                            여러 사람의 일정을 맞추는 과정에서 카카오톡으로 날짜를 주고받고,
+                            중간 장소는 따로 지도 앱을 열어 찾아야 하는 분산된 불편함을 직접 경험하면서
+                            <strong>'일정 조율 + 중간 장소 추천'을 한 곳에서 해결하는 웹서비스</strong>를 기획·개발했습니다.
+                            <br><br>
+                            <strong>회원가입 없이, 앱 설치 없이</strong> 링크 하나로 바로 사용할 수 있도록
+                            진입 장벽을 낮추는 것을 핵심 설계 원칙으로 삼았습니다.
+                        </p>
+                    </div>
+
+                    <div class="project-section">
+                        <h4 class="project-section-title">주요 역할</h4>
+                        <ul class="role-list">
+                            <li>사용자 문제 정의 및 MVP 범위 결정 (일정 조율 + 중간 장소 추천 핵심 기능으로 범위 한정)</li>
+                            <li>달력 기반 일정 선택 및 참여자 간 가능 날짜 비교 기능 설계·구현</li>
+                            <li>카카오맵 API 연동으로 참여자 출발지 기준 중간 장소 자동 추천 구현</li>
+                            <li>Supabase로 모임 데이터 관리 및 실시간 응답 수집 구조 설계</li>
+                            <li>Vercel 배포까지 기획→개발→출시 전 과정 1인 완수</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-section">
+                        <h4 class="project-section-title">주요 결과</h4>
+                        <div class="result-grid">
+                            <div class="result-item">
+                                <span class="result-metric">출시</span>
+                                <span class="result-label">MVP 기획·개발·배포 완수</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-metric">0→1</span>
+                                <span class="result-label">아이디어에서 실서비스로</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-metric">무설치</span>
+                                <span class="result-label">회원가입 없이 링크로 즉시 사용</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-section">
+                        <h4 class="project-section-title">핵심 설계 원칙</h4>
+                        <div class="scenario-box">
+                            <p class="scenario-text">
+                                <strong>진입 장벽을 최대한 낮춘다.</strong><br>
+                                회원가입·앱 설치를 요구하는 순간 이탈이 생깁니다.
+                                링크 하나로 바로 접근해 일정을 입력하고, 결과를 공유할 수 있도록
+                                모든 기능을 비로그인 기반으로 설계했습니다.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="project-section">
+                        <h4 class="project-section-title">프로젝트 링크</h4>
+                        <div style="display: flex; gap: var(--space-md); flex-wrap: wrap;">
+                            <a href="https://github.com/soyeon23/see-you-when" target="_blank" class="btn btn-secondary" style="display: inline-flex;">
+                                GitHub
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M6 3H3V13H13V10M9 3H13M13 3V7M13 3L7 9" stroke="currentColor"
+                                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </a>
+                            <a href="https://see-you-when.vercel.app/" target="_blank" class="btn btn-primary" style="display: inline-flex;">
+                                Web
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M6 3H3V13H13V10M9 3H13M13 3V7M13 3L7 9" stroke="currentColor"
+                                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>구현 방식 보기</span>
+                            <svg class="accordion-icon" viewBox="0 0 20 20" fill="none">
+                                <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="accordion-body">
+                                <p>
+                                    <strong>사용 기술:</strong> Next.js, Supabase, 카카오맵 API<br>
+                                    <strong>배포:</strong> Vercel<br>
+                                    <strong>핵심 기능:</strong> 달력 기반 일정 조율, 참여자 출발지 기준 중간 장소 자동 추천, 비로그인 모임 생성·공유<br>
+                                    <strong>설계 원칙:</strong> 회원가입 없이 링크로 즉시 사용 가능한 제로 마찰 UX
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
         </div>
     </section>
 
