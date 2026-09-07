@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects | 심소연 - Project Manager</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230057ff'/%3E%3Ctext x='16' y='23' font-family='Arial, sans-serif' font-size='19' font-weight='700' fill='white' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+    <title>Build Lab | 심소연 - AI-native R&D & Product Builder</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/pages.css">
 </head>
@@ -22,8 +22,8 @@
             <ul class="nav-menu">
                 <li><a href="index.html" class="nav-link">Overview</a></li>
                 <li><a href="career.html" class="nav-link">Career</a></li>
-                <li><a href="projects.html" class="nav-link active">Projects</a></li>
-                <li><a href="work-life-logic.html" class="nav-link">Work-Life Logic</a></li>
+                <li><a href="projects.html" class="nav-link active">Build Lab</a></li>
+                <li><a href="work-life-logic.html" class="nav-link">Thinking</a></li>
                 <li><a href="resume.html" class="nav-link">Resume</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
@@ -37,11 +37,11 @@
     <!-- Page Header -->
     <header class="page-header">
         <div class="container">
-            <span class="page-label">Personal Projects</span>
-            <h1 class="page-title">스스로 정의한 문제</h1>
+            <span class="page-label">Build Lab</span>
+            <h1 class="page-title">업무와 일상에서 발견한 문제를 직접 만들어 검증하다</h1>
             <p class="page-description">
-                실무에서 직접 만든 도구부터 개인 프로젝트까지,<br>
-                스스로 정의한 문제를 데이터와 AI로 해결한 결과물입니다.
+                실무에서 직접 만든 AI 도구부터 0→1로 기획·개발·배포한 웹서비스까지,<br>
+                스스로 정의한 문제를 데이터와 AI, 코드로 직접 검증한 결과물입니다.
             </p>
         </div>
     </header>
@@ -54,13 +54,21 @@
                 <p class="intro-text">
                     실무에서 반복적으로 마주한 비효율을 더 깊게 파고들고 싶었습니다.
                     회사에서는 프로젝트 일정과 리소스 제약 등으로 시도하지 못했던 접근을
-                    데이터 역량을 기반으로 개인 프로젝트에서 실험하고,
+                    데이터와 AI 역량을 기반으로 직접 실험하고,
                     그 결과를 다시 실무에 적용할 수 있는 순환 구조를 만들고자 하였습니다.
                     <br><br>
                     사용한 기술 스택은 수단일 뿐,
                     <strong>'문제를 어떻게 정의했고'</strong>,
                     <strong>'그 정의를 실무에 어떻게 연결했는지'</strong>를 중심으로 봐주시면 좋겠습니다.
                 </p>
+            </div>
+
+            <div class="project-filter" role="group" aria-label="프로젝트 카테고리 필터">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="ai-build">AI Build</button>
+                <button class="filter-btn" data-filter="product">Product</button>
+                <button class="filter-btn" data-filter="data">Data</button>
+                <button class="filter-btn" data-filter="automation">Automation</button>
             </div>
         </div>
     </section>
@@ -69,31 +77,41 @@
     <section class="project-toc">
         <div class="container">
             <p class="toc-title">프로젝트 바로가기</p>
-            <div class="toc-list">
-                <a href="#project-churn" class="toc-item">
-                    <span class="toc-number">1</span>
-                    초기 이탈 원인 분석 및 개입 전략 설계
-                </a>
-                <a href="#project-review" class="toc-item">
-                    <span class="toc-number">2</span>
-                    리뷰·평점 기반 리스크 조기 감지 프레임
-                </a>
-                <a href="#project-dashboard" class="toc-item">
-                    <span class="toc-number">3</span>
-                    학습 현황 진단 대시보드 구축
-                </a>
-                <a href="#project-edutrend" class="toc-item">
-                    <span class="toc-number">4</span>
-                    EduTrend Finder: 교육 트렌드 분석 도구
-                </a>
-                <a href="#project-chatbot" class="toc-item">
-                    <span class="toc-number">5</span>
-                    연구행정 법령 기반 RAG 챗봇 개발
-                </a>
-                <a href="#project-seeyouwhen" class="toc-item">
-                    <span class="toc-number">6</span>
-                    언제볼래: 모임 일정·중간 장소 조율 웹서비스
-                </a>
+
+            <div class="toc-group">
+                <span class="toc-group-label">Build · 직접 만든 결과물</span>
+                <div class="toc-list">
+                    <a href="#project-chatbot" class="toc-item" data-category="ai-build automation">
+                        <span class="toc-number">1</span>
+                        연구행정 법령 기반 RAG 챗봇 개발
+                    </a>
+                    <a href="#project-seeyouwhen" class="toc-item" data-category="product ai-build">
+                        <span class="toc-number">2</span>
+                        언제볼래: 모임 일정·중간 장소 조율 웹서비스
+                    </a>
+                    <a href="#project-edutrend" class="toc-item" data-category="data">
+                        <span class="toc-number">3</span>
+                        EduTrend Finder: 교육 트렌드 분석 도구
+                    </a>
+                </div>
+            </div>
+
+            <div class="toc-group">
+                <span class="toc-group-label">Data & Decision · 데이터로 판단 기준을 설계한 프레임</span>
+                <div class="toc-list">
+                    <a href="#project-dashboard" class="toc-item" data-category="data">
+                        <span class="toc-number">4</span>
+                        학습 현황 진단 대시보드 구축
+                    </a>
+                    <a href="#project-churn" class="toc-item" data-category="data">
+                        <span class="toc-number">5</span>
+                        초기 이탈 원인 분석 및 개입 전략 설계
+                    </a>
+                    <a href="#project-review" class="toc-item" data-category="data">
+                        <span class="toc-number">6</span>
+                        리뷰·평점 기반 리스크 조기 감지 프레임
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -102,15 +120,685 @@
     <section class="section projects-list">
         <div class="container">
 
-            <!-- Project 1 -->
-            <article class="project-card" id="project-churn">
+            <!-- Build Group -->
+            <div class="build-group" data-group="build">
+                <div class="build-group-header">
+                    <span class="build-group-index">01</span>
+                    <div>
+                        <div class="build-group-title">
+                            Build
+                            <span class="build-group-count">(3)</span>
+                        </div>
+                        <p class="build-group-desc">AI와 코드로 직접 만들어 검증한 결과물 — 기획부터 배포까지 완수</p>
+                    </div>
+                </div>
+
+            <!-- Project: RAG Chatbot -->
+            <article class="project-card" id="project-chatbot" data-category="ai-build automation">
                 <div class="project-card-header">
-                    <span class="project-category">초기 이탈 방어 & 리텐션 개선</span>
+                    <div class="card-header-top">
+                        <span class="project-category">실무 자동화 & AI 도구 개발</span>
+                        <div class="stat-badge">
+                            <span class="stat-badge-number">100%</span>
+                            <span class="stat-badge-label">출처 명시 (문서명·조문·페이지)</span>
+                        </div>
+                    </div>
+                    <h3 class="project-title">연구행정 법령 기반 RAG 챗봇 개발</h3>
+                    <p class="project-subtitle">2026.03 ~ | 이엠포커스 재직 중 자체 개발·업무 적용</p>
+                </div>
+
+                <div class="project-cta-row">
+                    <a href="https://github.com/soyeon23/chat-bot" target="_blank" class="btn btn-secondary">
+                        GitHub
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M6 3H3V13H13V10M9 3H13M13 3V7M13 3L7 9" stroke="currentColor"
+                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="project-content">
+                    <div class="structure-builder" data-structure>
+                        <div class="structure-builder-head">
+                            <span class="structure-builder-label">Walk through the structure</span>
+                            <button class="structure-builder-trigger" type="button" aria-expanded="false"
+                                data-label-default="Problem 클릭해서 구조 조립하기" data-label-active="구조 접기">
+                                <span class="structure-builder-trigger-label">Problem 클릭해서 구조 조립하기</span>
+                                <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                                    <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="structure-nodes">
+                            <div class="structure-node">
+                                <div class="structure-node-head">
+                                    <span class="structure-node-index">01</span>
+                                    <span class="structure-node-title">Problem</span>
+                                </div>
+                                <p class="structure-node-body">R&D 과제 수행 중 반복되는 연구행정 법령 질의응답에 매번 문서를 직접 찾아야 하는 비효율</p>
+                            </div>
+                            <div class="structure-node">
+                                <div class="structure-node-head">
+                                    <span class="structure-node-index">02</span>
+                                    <span class="structure-node-title">Data</span>
+                                </div>
+                                <p class="structure-node-body">국가연구개발혁신법 관련 PDF·HWP 법령·매뉴얼 문서</p>
+                            </div>
+                            <div class="structure-node">
+                                <div class="structure-node-head">
+                                    <span class="structure-node-index">03</span>
+                                    <span class="structure-node-title">AI · Build</span>
+                                </div>
+                                <p class="structure-node-body">Qdrant 하이브리드 검색(벡터+텍스트) + 질의 유형별 라우팅, Claude Code 4-에이전트 개발</p>
+                            </div>
+                            <div class="structure-node">
+                                <div class="structure-node-head">
+                                    <span class="structure-node-index">04</span>
+                                    <span class="structure-node-title">KPI</span>
+                                </div>
+                                <p class="structure-node-body">실무 적용 · 출처 100% 명시 · 반복 질의응답 자동화</p>
+                            </div>
+                            <div class="structure-node">
+                                <div class="structure-node-head">
+                                    <span class="structure-node-index">05</span>
+                                    <span class="structure-node-title">Structure</span>
+                                </div>
+                                <p class="structure-node-body">출처 기반 보수형 RAG 챗봇, 실무 도입 완료</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-section">
+                        <h4 class="project-section-title">Overview</h4>
+                        <p class="project-section-text">
+                            R&D 과제 수행 중 반복되는 연구행정 법령 질의응답(국가연구개발혁신법 관련 규정·지침 등)을
+                            매번 문서를 직접 찾아야 하는 비효율을 해결하기 위해,
+                            <strong>PDF·HWP 매뉴얼·법령 문서를 학습한 보수형 RAG 챗봇</strong>을 직접 개발하고 실무에 적용했습니다.
+                            근거 없이 답변하지 않으며, 모든 출처(문서명·조문·페이지)를 명시하는 것을 핵심 원칙으로 설계했습니다.
+                        </p>
+                    </div>
+
+                    <div class="project-section">
+                        <h4 class="project-section-title">Domain Problem → Knowledge Architecture → RAG → Prototype → Workflow Integration</h4>
+                        <ul class="role-list">
+                            <li>반복 질의응답 비효율을 문제로 정의하고, RAG 아키텍처로 해결 방향 설계</li>
+                            <li>질의 유형(일반 토픽·페이지 조회·조문 조회·비교형) 분류 및 라우팅 로직 설계</li>
+                            <li>Qdrant 벡터 DB 기반 하이브리드 검색(의미 검색 + 텍스트 검색) 구현</li>
+                            <li>법제처 MCP·HWP MCP 연동으로 문서 파싱 커버리지 확대</li>
+                            <li>Claude Code를 활용한 4-에이전트(PM·Backend·Frontend·Scout) 개발팀 구조로 빠른 반복 개발</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-section">
+                        <h4 class="project-section-title">주요 결과</h4>
+                        <div class="result-grid">
+                            <div class="result-item">
+                                <span class="result-metric">적용</span>
+                                <span class="result-label">실무 업무에 직접 도입</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-metric">100%</span>
+                                <span class="result-label">출처 명시 (문서명·조문·페이지)</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-metric">자동화</span>
+                                <span class="result-label">반복 법령 질의응답 처리</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-section">
+                        <h4 class="project-section-title">핵심 설계 원칙</h4>
+                        <div class="scenario-box">
+                            <p class="scenario-text">
+                                <strong>근거 없이 답변하지 않는다.</strong><br>
+                                할루시네이션 방지를 위해 검색된 문서 내 근거가 없으면 답변을 생성하지 않도록 설계했습니다.
+                                법령·행정 도메인 특성상 부정확한 답변이 업무 오류로 직결되기 때문입니다.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="project-section">
+                        <h4 class="project-section-title">Applied to Real R&D Operations</h4>
+                        <p class="project-section-text">
+                            <a href="career.html#project-rd-management" class="selected-work-link">
+                                Related Work Experience: R&D 과제 운영관리 및 연구행정 자동화 →
+                            </a>
+                        </p>
+                    </div>
+
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>구현 방식 보기</span>
+                            <svg class="accordion-icon" viewBox="0 0 20 20" fill="none">
+                                <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="accordion-body">
+                                <p>
+                                    <strong>사용 기술:</strong> Python, Streamlit, Qdrant, ko-sroberta-multitask, pdfplumber, Tesseract OCR<br>
+                                    <strong>AI 연동:</strong> Claude Code (OAuth 인증), MCP (법제처·HWP)<br>
+                                    <strong>검색 방식:</strong> 하이브리드 검색 (벡터 의미 검색 + 텍스트 검색 도구)<br>
+                                    <strong>산출물:</strong> 실무 적용 RAG 챗봇, 질의 유형별 라우팅 로직, 4-에이전트 개발 구조
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project: 언제볼래 -->
+            <article class="project-card" id="project-seeyouwhen" data-category="product ai-build">
+                <div class="project-card-header">
+                    <div class="card-header-top">
+                        <span class="project-category">서비스 기획 & 웹서비스 개발·배포</span>
+                        <div class="stat-badge">
+                            <span class="stat-badge-number">0→1</span>
+                            <span class="stat-badge-label">아이디어에서 실서비스로</span>
+                        </div>
+                    </div>
+                    <h3 class="project-title">언제볼래: 모임 일정·중간 장소 조율 웹서비스</h3>
+                    <p class="project-subtitle">2026.05 ~ 진행중 | 기획·개발·배포 1인 완수</p>
+                </div>
+
+                <div class="project-cta-row">
+                    <a href="https://see-you-when.vercel.app/" target="_blank" class="btn btn-primary">
+                        Live Demo 보기
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M6 3H3V13H13V10M9 3H13M13 3V7M13 3L7 9" stroke="currentColor"
+                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                    <a href="https://github.com/soyeon23/see-you-when" target="_blank" class="btn btn-secondary">
+                        GitHub
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M6 3H3V13H13V10M9 3H13M13 3V7M13 3L7 9" stroke="currentColor"
+                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="project-content">
+                    <div class="structure-builder" data-structure>
+                        <div class="structure-builder-head">
+                            <span class="structure-builder-label">Walk through the structure</span>
+                            <button class="structure-builder-trigger" type="button" aria-expanded="false"
+                                data-label-default="Problem 클릭해서 구조 조립하기" data-label-active="구조 접기">
+                                <span class="structure-builder-trigger-label">Problem 클릭해서 구조 조립하기</span>
+                                <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                                    <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="structure-nodes">
+                            <div class="structure-node">
+                                <div class="structure-node-head">
+                                    <span class="structure-node-index">01</span>
+                                    <span class="structure-node-title">Problem</span>
+                                </div>
+                                <p class="structure-node-body">여러 명 일정 조율과 중간 장소 탐색이 카톡 + 지도앱으로 분산되는 불편함</p>
+                            </div>
+                            <div class="structure-node">
+                                <div class="structure-node-head">
+                                    <span class="structure-node-index">02</span>
+                                    <span class="structure-node-title">Data</span>
+                                </div>
+                                <p class="structure-node-body">참여자별 가능 날짜, 출발지 좌표(카카오맵 API)</p>
+                            </div>
+                            <div class="structure-node">
+                                <div class="structure-node-head">
+                                    <span class="structure-node-index">03</span>
+                                    <span class="structure-node-title">AI · Build</span>
+                                </div>
+                                <p class="structure-node-body">Next.js + Supabase로 비로그인 실시간 응답 수집, 카카오맵 API로 중간지점 자동 계산</p>
+                            </div>
+                            <div class="structure-node">
+                                <div class="structure-node-head">
+                                    <span class="structure-node-index">04</span>
+                                    <span class="structure-node-title">KPI</span>
+                                </div>
+                                <p class="structure-node-body">MVP 기획→개발→배포 1인 완수 · 무설치 · 0→1</p>
+                            </div>
+                            <div class="structure-node">
+                                <div class="structure-node-head">
+                                    <span class="structure-node-index">05</span>
+                                    <span class="structure-node-title">Structure</span>
+                                </div>
+                                <p class="structure-node-body">실제 배포된 웹서비스 (Vercel)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-section">
+                        <h4 class="project-section-title">Overview</h4>
+                        <p class="project-section-text">
+                            여러 사람의 일정을 맞추는 과정에서 카카오톡으로 날짜를 주고받고,
+                            중간 장소는 따로 지도 앱을 열어 찾아야 하는 분산된 불편함을 직접 경험하면서
+                            <strong>'일정 조율 + 중간 장소 추천'을 한 곳에서 해결하는 웹서비스</strong>를 기획·개발했습니다.
+                            <br><br>
+                            <strong>회원가입 없이, 앱 설치 없이</strong> 링크 하나로 바로 사용할 수 있도록
+                            진입 장벽을 낮추는 것을 핵심 설계 원칙으로 삼았습니다.
+                        </p>
+                    </div>
+
+                    <div class="project-section">
+                        <h4 class="project-section-title">주요 역할</h4>
+                        <ul class="role-list">
+                            <li>사용자 문제 정의 및 MVP 범위 결정 (일정 조율 + 중간 장소 추천 핵심 기능으로 범위 한정)</li>
+                            <li>달력 기반 일정 선택 및 참여자 간 가능 날짜 비교 기능 설계·구현</li>
+                            <li>카카오맵 API 연동으로 참여자 출발지 기준 중간 장소 자동 추천 구현</li>
+                            <li>Supabase로 모임 데이터 관리 및 실시간 응답 수집 구조 설계</li>
+                            <li>Vercel 배포까지 기획→개발→출시 전 과정 1인 완수</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-section">
+                        <h4 class="project-section-title">주요 결과</h4>
+                        <div class="result-grid">
+                            <div class="result-item">
+                                <span class="result-metric">출시</span>
+                                <span class="result-label">MVP 기획·개발·배포 완수</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-metric">0→1</span>
+                                <span class="result-label">아이디어에서 실서비스로</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-metric">무설치</span>
+                                <span class="result-label">회원가입 없이 링크로 즉시 사용</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-section">
+                        <h4 class="project-section-title">핵심 설계 원칙</h4>
+                        <div class="scenario-box">
+                            <p class="scenario-text">
+                                <strong>진입 장벽을 최대한 낮춘다.</strong><br>
+                                회원가입·앱 설치를 요구하는 순간 이탈이 생깁니다.
+                                링크 하나로 바로 접근해 일정을 입력하고, 결과를 공유할 수 있도록
+                                모든 기능을 비로그인 기반으로 설계했습니다.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>구현 방식 보기</span>
+                            <svg class="accordion-icon" viewBox="0 0 20 20" fill="none">
+                                <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="accordion-body">
+                                <p>
+                                    <strong>사용 기술:</strong> Next.js, Supabase, 카카오맵 API<br>
+                                    <strong>배포:</strong> Vercel<br>
+                                    <strong>핵심 기능:</strong> 달력 기반 일정 조율, 참여자 출발지 기준 중간 장소 자동 추천, 비로그인 모임 생성·공유<br>
+                                    <strong>설계 원칙:</strong> 회원가입 없이 링크로 즉시 사용 가능한 제로 마찰 UX
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project: EduTrend Finder -->
+            <article class="project-card" id="project-edutrend" data-category="data">
+                <div class="project-card-header">
+                    <div class="card-header-top">
+                        <span class="project-category">데이터 기반 의사결정 보조 도구</span>
+                        <div class="stat-badge">
+                            <span class="stat-badge-number">1회</span>
+                            <span class="stat-badge-label">데이터 기반 합의 구조 정립</span>
+                        </div>
+                    </div>
+                    <h3 class="project-title">EduTrend Finder: 교육 트렌드 분석 및 기획 의사결정 보조 도구</h3>
+                    <p class="project-subtitle">2026.02.02 - 2026.02.05</p>
+                </div>
+
+                <div class="project-cta-row">
+                    <a href="https://edutrend-finder.streamlit.app/" target="_blank" class="btn btn-primary">
+                        Live Demo 보기
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M6 3H3V13H13V10M9 3H13M13 3V7M13 3L7 9" stroke="currentColor"
+                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                    <a href="https://github.com/soyeon23/EduTrend-Finder" target="_blank" class="btn btn-secondary">
+                        GitHub
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M6 3H3V13H13V10M9 3H13M13 3V7M13 3L7 9" stroke="currentColor"
+                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="project-content">
+                    <div class="edutrend-grid">
+                        <img src="images/EduTrend Finder 1.png" alt="EduTrend Finder 화면 1" loading="lazy">
+                        <img src="images/EduTrend Finder 2.png" alt="EduTrend Finder 화면 2" loading="lazy">
+                        <img src="images/EduTrend Finder 3.png" alt="EduTrend Finder 화면 3" loading="lazy">
+                        <img src="images/EduTrend Finder 4.png" alt="EduTrend Finder 화면 4" loading="lazy">
+                    </div>
+
+                    <div class="structure-builder" data-structure>
+                        <div class="structure-builder-head">
+                            <span class="structure-builder-label">Walk through the structure</span>
+                            <button class="structure-builder-trigger" type="button" aria-expanded="false"
+                                data-label-default="Problem 클릭해서 구조 조립하기" data-label-active="구조 접기">
+                                <span class="structure-builder-trigger-label">Problem 클릭해서 구조 조립하기</span>
+                                <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                                    <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="structure-nodes">
+                            <div class="structure-node">
+                                <div class="structure-node-head">
+                                    <span class="structure-node-index">01</span>
+                                    <span class="structure-node-title">Problem</span>
+                                </div>
+                                <p class="structure-node-body">교육 주제 선정 시 "왜 이 주제인가"에 대한 정량적 근거 부재, 회의 지연</p>
+                            </div>
+                            <div class="structure-node">
+                                <div class="structure-node-head">
+                                    <span class="structure-node-index">02</span>
+                                    <span class="structure-node-title">Data</span>
+                                </div>
+                                <p class="structure-node-body">Web 검색 + YouTube 검색 트렌드 데이터 교차 분석</p>
+                            </div>
+                            <div class="structure-node">
+                                <div class="structure-node-head">
+                                    <span class="structure-node-index">03</span>
+                                    <span class="structure-node-title">AI · Build</span>
+                                </div>
+                                <p class="structure-node-body">성장률·변동성·상관계수 기반 판단 로직을 Python·Streamlit으로 구현</p>
+                            </div>
+                            <div class="structure-node">
+                                <div class="structure-node-head">
+                                    <span class="structure-node-index">04</span>
+                                    <span class="structure-node-title">KPI</span>
+                                </div>
+                                <p class="structure-node-body">주제 선정 리드타임 단축 · 데이터 기반 1회 합의 구조</p>
+                            </div>
+                            <div class="structure-node">
+                                <div class="structure-node-head">
+                                    <span class="structure-node-index">05</span>
+                                    <span class="structure-node-title">Structure</span>
+                                </div>
+                                <p class="structure-node-body">Streamlit 배포 웹 도구 + GitHub 오픈소스</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-section">
+                        <h4 class="project-section-title">교육 현장에서의 문제 인식</h4>
+                        <ul class="role-list">
+                            <li>단기 이슈와 지속 가능한 트렌드를 구분하지 못함</li>
+                            <li>회의에서 "왜 이 주제가 인기라고 판단했는지?"에 대한 객관적 근거 부재</li>
+                            <li>다양한 후보 중 우선순위 판단 기준 부재</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-section">
+                        <h4 class="project-section-title">솔루션</h4>
+                        <p class="project-section-text">
+                            <strong>EduTrend Finder</strong>는 이러한 문제를 해결하기 위해,
+                            검색 데이터 기반의 정량적 판단 체계를 제공합니다.
+                            교육 기획 시 주제 선정의 객관적 근거를 확보하고,
+                            트렌드의 지속성을 판단할 수 있는 데이터 기반 의사결정을 지원합니다.
+                        </p>
+                    </div>
+
+                    <!-- Accordion for technical details -->
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>구현 방식 보기</span>
+                            <svg class="accordion-icon" viewBox="0 0 20 20" fill="none">
+                                <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="accordion-body">
+                                <p>
+                                    <strong>사용 기술:</strong> Python, Streamlit, 검색 데이터 API<br>
+                                    <strong>핵심 기능:</strong> 키워드 트렌드 분석, 시계열 비교, 관련 키워드 추천<br>
+                                    <strong>배포:</strong> Streamlit Cloud
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            </div><!-- /.build-group[data-group="build"] -->
+
+            <!-- Data & Decision Group -->
+            <div class="build-group" data-group="data">
+                <div class="build-group-header">
+                    <span class="build-group-index">02</span>
+                    <div>
+                        <div class="build-group-title">
+                            Data & Decision
+                            <span class="build-group-count">(3)</span>
+                        </div>
+                        <p class="build-group-desc">데이터로 판단 기준을 설계한 의사결정 프레임</p>
+                    </div>
+                </div>
+
+            <!-- Project: 학습 현황 진단 대시보드 -->
+            <article class="project-card" id="project-dashboard" data-category="data">
+                <div class="project-card-header">
+                    <div class="card-header-top">
+                        <span class="project-category">Tableau Dashboard & 학습자 현황 분석</span>
+                        <div class="stat-badge">
+                            <span class="stat-badge-number">3단계</span>
+                            <span class="stat-badge-label">Viewed-Explored-Certified 퍼널</span>
+                        </div>
+                    </div>
+                    <h3 class="project-title">학습 현황 진단 대시보드 구축</h3>
+                    <p class="project-subtitle">2026.01.12 - 2026.01.23 | 사용 데이터: Kaggle 온라인 강좌 수강생 참여도 지표</p>
+                </div>
+
+                <div class="project-cta-row">
+                    <a href="https://public.tableau.com/app/profile/soyeon.sim/viz/LearningRetention-/sheet4"
+                        target="_blank" class="btn btn-primary">
+                        Live Dashboard 보기
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M6 3H3V13H13V10M9 3H13M13 3V7M13 3L7 9" stroke="currentColor"
+                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="project-content">
+                    <div class="project-image">
+                        <img src="images/dashboard project.png" alt="학습 현황 진단 대시보드 스크린샷" loading="lazy">
+                    </div>
+
+                    <div class="structure-builder" data-structure>
+                        <div class="structure-builder-head">
+                            <span class="structure-builder-label">Walk through the structure</span>
+                            <button class="structure-builder-trigger" type="button" aria-expanded="false"
+                                data-label-default="Problem 클릭해서 구조 조립하기" data-label-active="구조 접기">
+                                <span class="structure-builder-trigger-label">Problem 클릭해서 구조 조립하기</span>
+                                <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                                    <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="structure-nodes">
+                            <div class="structure-node">
+                                <div class="structure-node-head">
+                                    <span class="structure-node-index">01</span>
+                                    <span class="structure-node-title">Problem</span>
+                                </div>
+                                <p class="structure-node-body">주차별 로그가 없는 데이터 제약 속에서 학습자 이탈이 언제·어디서·왜 발생하는지 파악 불가</p>
+                            </div>
+                            <div class="structure-node">
+                                <div class="structure-node-head">
+                                    <span class="structure-node-index">02</span>
+                                    <span class="structure-node-title">Data</span>
+                                </div>
+                                <p class="structure-node-body">Kaggle 온라인 강좌 수강생 참여도 지표</p>
+                            </div>
+                            <div class="structure-node">
+                                <div class="structure-node-head">
+                                    <span class="structure-node-index">03</span>
+                                    <span class="structure-node-title">Method</span>
+                                </div>
+                                <p class="structure-node-body">Viewed-Explored-Certified 행동 단계 퍼널 + 시간 프록시(active_week_bucket) 결합</p>
+                            </div>
+                            <div class="structure-node">
+                                <div class="structure-node-head">
+                                    <span class="structure-node-index">04</span>
+                                    <span class="structure-node-title">Insight</span>
+                                </div>
+                                <p class="structure-node-body">이탈은 특정 단계·시점에 집중, 초기 탐색 단계부터 개입이 효과적</p>
+                            </div>
+                            <div class="structure-node">
+                                <div class="structure-node-head">
+                                    <span class="structure-node-index">05</span>
+                                    <span class="structure-node-title">Output</span>
+                                </div>
+                                <p class="structure-node-body">Top-down 의사결정 지원 Tableau 대시보드</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-section">
+                        <h4 class="project-section-title">Overview</h4>
+                        <p class="project-section-text">
+                            본 대시보드는 이탈률 자체를 설명하지 않고, 학습자 이탈이
+                            <strong>'언제·어디서·왜'</strong> 발생하는지를 한 화면에서 구조적으로 파악하고
+                            조직이 어디부터 개입해야 하는지 합의할 수 있도록 돕는 의사결정 도구로 설계되었습니다.
+                            <br><br>
+                            특히, 주차별 로그가 없는 데이터 제약 하에서 행동 단계 (Viewed–Explored–Certified) 기반 퍼널 구조와
+                            시간 프록시(active_week_bucket)를 결합하여 해석 가능한 의사결정 구조를 만드는 것에 초점을 두었습니다.
+                        </p>
+                    </div>
+
+                    <div class="project-section">
+                        <h4 class="project-section-title">분석 구조 및 대시보드 설계</h4>
+                        <ul class="role-list">
+                            <li>학습 여정을 Viewed → Explored → Certified 3단계 퍼널로 단순화</li>
+                            <li>다음 단계 미진입 시 Drop at Viewed / Drop at Explored로 이탈 정의</li>
+                            <li>KPI → 퍼널 → Where·When 순의 Top-down 위계 구조 설계</li>
+                            <li>필터는 조직·난이도·강의 ID로 제한해 전략 판단 중심 설계</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-section">
+                        <h4 class="project-section-title">핵심 인사이트</h4>
+                        <div class="scenario-box">
+                            <p class="scenario-text">
+                                • 이탈은 특정 단계·시점에 집중되는 패턴을 보입니다.<br>
+                                • 이탈 원인은 콘텐츠 난이도보다 초기 경험 설계 문제에 있을 수 있습니다.<br>
+                                • 전면 개선보다 <strong>초기 탐색 단계 이탈 강의부터 개입</strong>하는 것이 효과적입니다.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Accordion for technical details -->
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>구현 방식 보기</span>
+                            <svg class="accordion-icon" viewBox="0 0 20 20" fill="none">
+                                <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="accordion-body">
+                                <p>
+                                    <strong>사용 기술:</strong> Tableau, 데이터 시각화<br>
+                                    <strong>데이터 소스:</strong> Kaggle 온라인 강좌 수강생 참여도 지표<br>
+                                    <strong>설계 원칙:</strong> Top-down 의사결정 지원, 필터 최소화로 전략 판단 집중
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project: 초기 이탈 분석 -->
+            <article class="project-card" id="project-churn" data-category="data">
+                <div class="project-card-header">
+                    <div class="card-header-top">
+                        <span class="project-category">초기 이탈 방어 & 리텐션 개선</span>
+                        <div class="stat-badge">
+                            <span class="stat-badge-number">48%</span>
+                            <span class="stat-badge-label">옵션 선택 단계 이탈 비중</span>
+                        </div>
+                    </div>
                     <h3 class="project-title">교육 서비스 초기 이탈 원인 분석 및 개입 전략 설계</h3>
                     <p class="project-subtitle">2025.12.04 - 2025.12.16</p>
                 </div>
 
                 <div class="project-content">
+                    <div class="output-images">
+                        <div class="output-images-grid">
+                            <img src="images/funnel 1.png" alt="퍼널 분석" loading="lazy">
+                            <img src="images/cohort 1.png" alt="코호트 분석 1" loading="lazy">
+                            <img src="images/cohort 2.png" alt="코호트 분석 2" loading="lazy">
+                        </div>
+                    </div>
+
+                    <div class="structure-builder" data-structure>
+                        <div class="structure-builder-head">
+                            <span class="structure-builder-label">Walk through the structure</span>
+                            <button class="structure-builder-trigger" type="button" aria-expanded="false"
+                                data-label-default="Problem 클릭해서 구조 조립하기" data-label-active="구조 접기">
+                                <span class="structure-builder-trigger-label">Problem 클릭해서 구조 조립하기</span>
+                                <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                                    <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="structure-nodes">
+                            <div class="structure-node">
+                                <div class="structure-node-head">
+                                    <span class="structure-node-index">01</span>
+                                    <span class="structure-node-title">Problem</span>
+                                </div>
+                                <p class="structure-node-body">초기 이탈이 콘텐츠 문제·선택 과부하로만 해석되어 개입 지점을 못 잡음</p>
+                            </div>
+                            <div class="structure-node">
+                                <div class="structure-node-head">
+                                    <span class="structure-node-index">02</span>
+                                    <span class="structure-node-title">Data</span>
+                                </div>
+                                <p class="structure-node-body">사용자 행동 로그 기반 퍼널·코호트 데이터</p>
+                            </div>
+                            <div class="structure-node">
+                                <div class="structure-node-head">
+                                    <span class="structure-node-index">03</span>
+                                    <span class="structure-node-title">Method</span>
+                                </div>
+                                <p class="structure-node-body">탐색 행동 기준 이탈·전환 분기점 도출, 결정 정체 구간 정의</p>
+                            </div>
+                            <div class="structure-node">
+                                <div class="structure-node-head">
+                                    <span class="structure-node-index">04</span>
+                                    <span class="structure-node-title">Insight</span>
+                                </div>
+                                <p class="structure-node-body">48% 옵션 선택 단계 이탈, 특정 탐색 구간 전환율 50%+</p>
+                            </div>
+                            <div class="structure-node">
+                                <div class="structure-node-head">
+                                    <span class="structure-node-index">05</span>
+                                    <span class="structure-node-title">Output</span>
+                                </div>
+                                <p class="structure-node-body">결정 정체 구간 우선 개입 전략 설계 문서</p>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="project-section">
                         <h4 class="project-section-title">Overview</h4>
                         <p class="project-section-text">
@@ -182,30 +870,86 @@
                                     <strong>분석 방법:</strong> 사용자 행동 로그 기반 퍼널/코호트 분석, 이탈/전환 분기점 도출<br>
                                     <strong>산출물:</strong> 전환 개입 전략 설계 문서, 타겟 사용자 정의 기준
                                 </p>
-                                <!-- 산출물 이미지 영역 -->
-                                <div class="output-images" style="margin-top: var(--space-4);">
-                                    <p style="font-size: 0.8125rem; color: var(--color-tertiary); margin-bottom: var(--space-3);">산출물 미리보기</p>
-                                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-3);">
-                                        <img src="images/funnel 1.png" alt="퍼널 분석" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: top left; border-radius: var(--radius-md); border: 1px solid var(--color-border);" loading="lazy">
-                                        <img src="images/cohort 1.png" alt="코호트 분석 1" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: top left; border-radius: var(--radius-md); border: 1px solid var(--color-border);" loading="lazy">
-                                        <img src="images/cohort 2.png" alt="코호트 분석 2" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: top left; border-radius: var(--radius-md); border: 1px solid var(--color-border);" loading="lazy">
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </article>
 
-            <!-- Project 2 -->
-            <article class="project-card" id="project-review">
+            <!-- Project: 리뷰·평점 리스크 감지 -->
+            <article class="project-card" id="project-review" data-category="data">
                 <div class="project-card-header">
-                    <span class="project-category">리스크 사전 관리 & 운영 구조 재설계</span>
+                    <div class="card-header-top">
+                        <span class="project-category">리스크 사전 관리 & 운영 구조 재설계</span>
+                        <div class="stat-badge">
+                            <span class="stat-badge-number">사전 감지</span>
+                            <span class="stat-badge-label">사후 인지 → 사전 감지 전환</span>
+                        </div>
+                    </div>
                     <h3 class="project-title">리뷰·평점 기반 신뢰도 진단 및 리스크 조기 감지 프레임</h3>
                     <p class="project-subtitle">2025.12.17 - 2025.12.23</p>
                 </div>
 
                 <div class="project-content">
+                    <div class="output-images">
+                        <div class="output-images-grid output-images-grid-2">
+                            <img src="images/risk 1.png" alt="리스크 분석 1" loading="lazy">
+                            <img src="images/risk 2.png" alt="리스크 분석 2" loading="lazy">
+                            <img src="images/risk 3.png" alt="리스크 분석 3" loading="lazy">
+                            <img src="images/risk 4.png" alt="리스크 분석 4" loading="lazy">
+                        </div>
+                    </div>
+
+                    <div class="structure-builder" data-structure>
+                        <div class="structure-builder-head">
+                            <span class="structure-builder-label">Walk through the structure</span>
+                            <button class="structure-builder-trigger" type="button" aria-expanded="false"
+                                data-label-default="Problem 클릭해서 구조 조립하기" data-label-active="구조 접기">
+                                <span class="structure-builder-trigger-label">Problem 클릭해서 구조 조립하기</span>
+                                <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                                    <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="structure-nodes">
+                            <div class="structure-node">
+                                <div class="structure-node-head">
+                                    <span class="structure-node-index">01</span>
+                                    <span class="structure-node-title">Problem</span>
+                                </div>
+                                <p class="structure-node-body">리뷰·평점을 사후 결과 지표로만 활용해 운영 리스크를 놓침</p>
+                            </div>
+                            <div class="structure-node">
+                                <div class="structure-node-head">
+                                    <span class="structure-node-index">02</span>
+                                    <span class="structure-node-title">Data</span>
+                                </div>
+                                <p class="structure-node-body">리뷰·평점 변동성 패턴 데이터</p>
+                            </div>
+                            <div class="structure-node">
+                                <div class="structure-node-head">
+                                    <span class="structure-node-index">03</span>
+                                    <span class="structure-node-title">Method</span>
+                                </div>
+                                <p class="structure-node-body">평균 점수 중심 → 변동성·패턴 누적 기반 위험 신호 임계치 설정</p>
+                            </div>
+                            <div class="structure-node">
+                                <div class="structure-node-head">
+                                    <span class="structure-node-index">04</span>
+                                    <span class="structure-node-title">Insight</span>
+                                </div>
+                                <p class="structure-node-body">위험 신호 → 운영 판단 → 대응 액션으로 이어지는 TO-BE 플로우</p>
+                            </div>
+                            <div class="structure-node">
+                                <div class="structure-node-head">
+                                    <span class="structure-node-index">05</span>
+                                    <span class="structure-node-title">Output</span>
+                                </div>
+                                <p class="structure-node-body">운영 리스크 판단 프레임, 대응 프로세스 플로우차트</p>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="project-section">
                         <h4 class="project-section-title">Overview</h4>
                         <p class="project-section-text">
@@ -267,426 +1011,13 @@
                                     <strong>분석 방법:</strong> 리뷰·평점 변동성 패턴 분석, 위험 신호 임계치 설정<br>
                                     <strong>산출물:</strong> 운영 리스크 판단 프레임, 대응 프로세스 플로우차트
                                 </p>
-                                <!-- 산출물 이미지 영역 -->
-                                <div class="output-images" style="margin-top: var(--space-4);">
-                                    <p style="font-size: 0.8125rem; color: var(--color-tertiary); margin-bottom: var(--space-3);">산출물 미리보기</p>
-                                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-3);">
-                                        <img src="images/risk 1.png" alt="리스크 분석 1" style="width: 100%; height: auto; border-radius: var(--radius-md); border: 1px solid var(--color-border);" loading="lazy">
-                                        <img src="images/risk 2.png" alt="리스크 분석 2" style="width: 100%; height: auto; border-radius: var(--radius-md); border: 1px solid var(--color-border);" loading="lazy">
-                                        <img src="images/risk 3.png" alt="리스크 분석 3" style="width: 100%; height: auto; border-radius: var(--radius-md); border: 1px solid var(--color-border);" loading="lazy">
-                                        <img src="images/risk 4.png" alt="리스크 분석 4" style="width: 100%; height: auto; border-radius: var(--radius-md); border: 1px solid var(--color-border);" loading="lazy">
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </article>
 
-            <!-- Project 3 -->
-            <article class="project-card" id="project-dashboard">
-                <div class="project-card-header">
-                    <span class="project-category">Tableau Dashboard & 학습자 현황 분석</span>
-                    <h3 class="project-title">학습 현황 진단 대시보드 구축</h3>
-                    <p class="project-subtitle">2026.01.12 - 2026.01.23 | 사용 데이터: Kaggle 온라인 강좌 수강생 참여도 지표</p>
-                </div>
-
-                <div class="project-content">
-                    <div class="project-section">
-                        <h4 class="project-section-title">Overview</h4>
-                        <p class="project-section-text">
-                            본 대시보드는 이탈률 자체를 설명하지 않고, 학습자 이탈이
-                            <strong>'언제·어디서·왜'</strong> 발생하는지를 한 화면에서 구조적으로 파악하고
-                            조직이 어디부터 개입해야 하는지 합의할 수 있도록 돕는 의사결정 도구로 설계되었습니다.
-                            <br><br>
-                            특히, 주차별 로그가 없는 데이터 제약 하에서 행동 단계 (Viewed–Explored–Certified) 기반 퍼널 구조와
-                            시간 프록시(active_week_bucket)를 결합하여 해석 가능한 의사결정 구조를 만드는 것에 초점을 두었습니다.
-                        </p>
-                    </div>
-
-                    <!-- Dashboard Image Accordion -->
-                    <div class="accordion-item">
-                        <button class="accordion-header">
-                            <span>대시보드 이미지 미리보기</span>
-                            <svg class="accordion-icon" viewBox="0 0 20 20" fill="none">
-                                <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5"
-                                    stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </button>
-                        <div class="accordion-content">
-                            <div class="accordion-body">
-                                <div class="project-image">
-                                    <img src="images/dashboard project.png" alt="학습 현황 진단 대시보드 스크린샷" loading="lazy">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="project-section">
-                        <h4 class="project-section-title">분석 구조 및 대시보드 설계</h4>
-                        <ul class="role-list">
-                            <li>학습 여정을 Viewed → Explored → Certified 3단계 퍼널로 단순화</li>
-                            <li>다음 단계 미진입 시 Drop at Viewed / Drop at Explored로 이탈 정의</li>
-                            <li>KPI → 퍼널 → Where·When 순의 Top-down 위계 구조 설계</li>
-                            <li>필터는 조직·난이도·강의 ID로 제한해 전략 판단 중심 설계</li>
-                        </ul>
-                    </div>
-
-                    <div class="project-section">
-                        <h4 class="project-section-title">핵심 인사이트</h4>
-                        <div class="scenario-box">
-                            <p class="scenario-text">
-                                • 이탈은 특정 단계·시점에 집중되는 패턴을 보입니다.<br>
-                                • 이탈 원인은 콘텐츠 난이도보다 초기 경험 설계 문제에 있을 수 있습니다.<br>
-                                • 전면 개선보다 <strong>초기 탐색 단계 이탈 강의부터 개입</strong>하는 것이 효과적입니다.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="project-section">
-                        <h4 class="project-section-title">대시보드 링크</h4>
-                        <a href="https://public.tableau.com/app/profile/soyeon.sim/viz/LearningRetention-/sheet4"
-                            target="_blank" class="btn btn-secondary" style="display: inline-flex;">
-                            Tableau Public에서 보기
-                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                <path d="M6 3H3V13H13V10M9 3H13M13 3V7M13 3L7 9" stroke="currentColor"
-                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </a>
-                    </div>
-
-                    <!-- Accordion for technical details -->
-                    <div class="accordion-item">
-                        <button class="accordion-header">
-                            <span>구현 방식 보기</span>
-                            <svg class="accordion-icon" viewBox="0 0 20 20" fill="none">
-                                <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5"
-                                    stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </button>
-                        <div class="accordion-content">
-                            <div class="accordion-body">
-                                <p>
-                                    <strong>사용 기술:</strong> Tableau, 데이터 시각화<br>
-                                    <strong>데이터 소스:</strong> Kaggle 온라인 강좌 수강생 참여도 지표<br>
-                                    <strong>설계 원칙:</strong> Top-down 의사결정 지원, 필터 최소화로 전략 판단 집중
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-
-            <!-- Project 4 -->
-            <article class="project-card" id="project-edutrend">
-                <div class="project-card-header">
-                    <span class="project-category">데이터 기반 의사결정 보조 도구</span>
-                    <h3 class="project-title">EduTrend Finder: 교육 트렌드 분석 및 기획 의사결정 보조 도구</h3>
-                    <p class="project-subtitle">2026.02.02 - 2026.02.05</p>
-                </div>
-
-                <div class="project-content">
-                    <div class="project-section">
-                        <h4 class="project-section-title">교육 현장에서의 문제 인식</h4>
-                        <ul class="role-list">
-                            <li>단기 이슈와 지속 가능한 트렌드를 구분하지 못함</li>
-                            <li>회의에서 "왜 이 주제가 인기라고 판단했는지?"에 대한 객관적 근거 부재</li>
-                            <li>다양한 후보 중 우선순위 판단 기준 부재</li>
-                        </ul>
-                    </div>
-
-                    <!-- EduTrend Finder Screenshots Accordion -->
-                    <div class="accordion-item">
-                        <button class="accordion-header">
-                            <span>주요 화면 미리보기</span>
-                            <svg class="accordion-icon" viewBox="0 0 20 20" fill="none">
-                                <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5"
-                                    stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </button>
-                        <div class="accordion-content">
-                            <div class="accordion-body">
-                                <style>
-                                    .edutrend-grid {
-                                        display: grid;
-                                        grid-template-columns: repeat(2, 1fr);
-                                        gap: var(--space-4);
-                                    }
-
-                                    .edutrend-grid img {
-                                        width: 100%;
-                                        aspect-ratio: 16 / 10;
-                                        object-fit: cover;
-                                        object-position: top left;
-                                        border-radius: var(--radius-md);
-                                        border: 1px solid var(--color-border);
-                                        transition: transform var(--transition-base);
-                                    }
-
-                                    .edutrend-grid img:hover {
-                                        transform: scale(1.02);
-                                        box-shadow: var(--shadow-md);
-                                    }
-                                </style>
-                                <div class="edutrend-grid">
-                                    <img src="images/EduTrend Finder 1.png" alt="EduTrend Finder 화면 1" loading="lazy">
-                                    <img src="images/EduTrend Finder 2.png" alt="EduTrend Finder 화면 2" loading="lazy">
-                                    <img src="images/EduTrend Finder 3.png" alt="EduTrend Finder 화면 3" loading="lazy">
-                                    <img src="images/EduTrend Finder 4.png" alt="EduTrend Finder 화면 4" loading="lazy">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="project-section">
-                        <h4 class="project-section-title">솔루션</h4>
-                        <p class="project-section-text">
-                            <strong>EduTrend Finder</strong>는 이러한 문제를 해결하기 위해,
-                            검색 데이터 기반의 정량적 판단 체계를 제공합니다.
-                            교육 기획 시 주제 선정의 객관적 근거를 확보하고,
-                            트렌드의 지속성을 판단할 수 있는 데이터 기반 의사결정을 지원합니다.
-                        </p>
-                    </div>
-
-                    <div class="project-section">
-                        <h4 class="project-section-title">프로젝트 링크</h4>
-                        <div style="display: flex; gap: var(--space-md); flex-wrap: wrap;">
-                            <a href="https://github.com/soyeon23/EduTrend-Finder" target="_blank"
-                                class="btn btn-secondary" style="display: inline-flex;">
-                                GitHub
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                    <path d="M6 3H3V13H13V10M9 3H13M13 3V7M13 3L7 9" stroke="currentColor"
-                                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
-                            </a>
-                            <a href="https://edutrend-finder.streamlit.app/" target="_blank" class="btn btn-primary"
-                                style="display: inline-flex;">
-                                Web
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                    <path d="M6 3H3V13H13V10M9 3H13M13 3V7M13 3L7 9" stroke="currentColor"
-                                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Accordion for technical details -->
-                    <div class="accordion-item">
-                        <button class="accordion-header">
-                            <span>구현 방식 보기</span>
-                            <svg class="accordion-icon" viewBox="0 0 20 20" fill="none">
-                                <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5"
-                                    stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </button>
-                        <div class="accordion-content">
-                            <div class="accordion-body">
-                                <p>
-                                    <strong>사용 기술:</strong> Python, Streamlit, 검색 데이터 API<br>
-                                    <strong>핵심 기능:</strong> 키워드 트렌드 분석, 시계열 비교, 관련 키워드 추천<br>
-                                    <strong>배포:</strong> Streamlit Cloud
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-
-            <!-- Project 5 -->
-            <article class="project-card" id="project-chatbot">
-                <div class="project-card-header">
-                    <span class="project-category">실무 자동화 & AI 도구 개발</span>
-                    <h3 class="project-title">연구행정 법령 기반 RAG 챗봇 개발</h3>
-                    <p class="project-subtitle">2026.03 ~ | 이엠포커스 재직 중 자체 개발·업무 적용</p>
-                </div>
-
-                <div class="project-content">
-                    <div class="project-section">
-                        <h4 class="project-section-title">Overview</h4>
-                        <p class="project-section-text">
-                            R&D 과제 수행 중 반복되는 연구행정 법령 질의응답(국가연구개발혁신법 관련 규정·지침 등)을
-                            매번 문서를 직접 찾아야 하는 비효율을 해결하기 위해,
-                            <strong>PDF·HWP 매뉴얼·법령 문서를 학습한 보수형 RAG 챗봇</strong>을 직접 개발하고 실무에 적용했습니다.
-                            근거 없이 답변하지 않으며, 모든 출처(문서명·조문·페이지)를 명시하는 것을 핵심 원칙으로 설계했습니다.
-                        </p>
-                    </div>
-
-                    <div class="project-section">
-                        <h4 class="project-section-title">주요 역할</h4>
-                        <ul class="role-list">
-                            <li>반복 질의응답 비효율을 문제로 정의하고, RAG 아키텍처로 해결 방향 설계</li>
-                            <li>질의 유형(일반 토픽·페이지 조회·조문 조회·비교형) 분류 및 라우팅 로직 설계</li>
-                            <li>Qdrant 벡터 DB 기반 하이브리드 검색(의미 검색 + 텍스트 검색) 구현</li>
-                            <li>법제처 MCP·HWP MCP 연동으로 문서 파싱 커버리지 확대</li>
-                            <li>Claude Code를 활용한 4-에이전트(PM·Backend·Frontend·Scout) 개발팀 구조로 빠른 반복 개발</li>
-                        </ul>
-                    </div>
-
-                    <div class="project-section">
-                        <h4 class="project-section-title">주요 결과</h4>
-                        <div class="result-grid">
-                            <div class="result-item">
-                                <span class="result-metric">적용</span>
-                                <span class="result-label">실무 업무에 직접 도입</span>
-                            </div>
-                            <div class="result-item">
-                                <span class="result-metric">100%</span>
-                                <span class="result-label">출처 명시 (문서명·조문·페이지)</span>
-                            </div>
-                            <div class="result-item">
-                                <span class="result-metric">자동화</span>
-                                <span class="result-label">반복 법령 질의응답 처리</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="project-section">
-                        <h4 class="project-section-title">핵심 설계 원칙</h4>
-                        <div class="scenario-box">
-                            <p class="scenario-text">
-                                <strong>근거 없이 답변하지 않는다.</strong><br>
-                                할루시네이션 방지를 위해 검색된 문서 내 근거가 없으면 답변을 생성하지 않도록 설계했습니다.
-                                법령·행정 도메인 특성상 부정확한 답변이 업무 오류로 직결되기 때문입니다.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="project-section">
-                        <h4 class="project-section-title">프로젝트 링크</h4>
-                        <a href="https://github.com/soyeon23/chat-bot" target="_blank" class="btn btn-secondary" style="display: inline-flex;">
-                            GitHub
-                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                <path d="M6 3H3V13H13V10M9 3H13M13 3V7M13 3L7 9" stroke="currentColor"
-                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </a>
-                    </div>
-
-                    <div class="accordion-item">
-                        <button class="accordion-header">
-                            <span>구현 방식 보기</span>
-                            <svg class="accordion-icon" viewBox="0 0 20 20" fill="none">
-                                <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5"
-                                    stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </button>
-                        <div class="accordion-content">
-                            <div class="accordion-body">
-                                <p>
-                                    <strong>사용 기술:</strong> Python, Streamlit, Qdrant, ko-sroberta-multitask, pdfplumber, Tesseract OCR<br>
-                                    <strong>AI 연동:</strong> Claude Code (OAuth 인증), MCP (법제처·HWP)<br>
-                                    <strong>검색 방식:</strong> 하이브리드 검색 (벡터 의미 검색 + 텍스트 검색 도구)<br>
-                                    <strong>산출물:</strong> 실무 적용 RAG 챗봇, 질의 유형별 라우팅 로직, 4-에이전트 개발 구조
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-
-            <!-- Project 6 -->
-            <article class="project-card" id="project-seeyouwhen">
-                <div class="project-card-header">
-                    <span class="project-category">서비스 기획 & 웹서비스 개발·배포</span>
-                    <h3 class="project-title">언제볼래: 모임 일정·중간 장소 조율 웹서비스</h3>
-                    <p class="project-subtitle">2026.05 ~ 진행중 | 기획·개발·배포 1인 완수</p>
-                </div>
-
-                <div class="project-content">
-                    <div class="project-section">
-                        <h4 class="project-section-title">Overview</h4>
-                        <p class="project-section-text">
-                            여러 사람의 일정을 맞추는 과정에서 카카오톡으로 날짜를 주고받고,
-                            중간 장소는 따로 지도 앱을 열어 찾아야 하는 분산된 불편함을 직접 경험하면서
-                            <strong>'일정 조율 + 중간 장소 추천'을 한 곳에서 해결하는 웹서비스</strong>를 기획·개발했습니다.
-                            <br><br>
-                            <strong>회원가입 없이, 앱 설치 없이</strong> 링크 하나로 바로 사용할 수 있도록
-                            진입 장벽을 낮추는 것을 핵심 설계 원칙으로 삼았습니다.
-                        </p>
-                    </div>
-
-                    <div class="project-section">
-                        <h4 class="project-section-title">주요 역할</h4>
-                        <ul class="role-list">
-                            <li>사용자 문제 정의 및 MVP 범위 결정 (일정 조율 + 중간 장소 추천 핵심 기능으로 범위 한정)</li>
-                            <li>달력 기반 일정 선택 및 참여자 간 가능 날짜 비교 기능 설계·구현</li>
-                            <li>카카오맵 API 연동으로 참여자 출발지 기준 중간 장소 자동 추천 구현</li>
-                            <li>Supabase로 모임 데이터 관리 및 실시간 응답 수집 구조 설계</li>
-                            <li>Vercel 배포까지 기획→개발→출시 전 과정 1인 완수</li>
-                        </ul>
-                    </div>
-
-                    <div class="project-section">
-                        <h4 class="project-section-title">주요 결과</h4>
-                        <div class="result-grid">
-                            <div class="result-item">
-                                <span class="result-metric">출시</span>
-                                <span class="result-label">MVP 기획·개발·배포 완수</span>
-                            </div>
-                            <div class="result-item">
-                                <span class="result-metric">0→1</span>
-                                <span class="result-label">아이디어에서 실서비스로</span>
-                            </div>
-                            <div class="result-item">
-                                <span class="result-metric">무설치</span>
-                                <span class="result-label">회원가입 없이 링크로 즉시 사용</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="project-section">
-                        <h4 class="project-section-title">핵심 설계 원칙</h4>
-                        <div class="scenario-box">
-                            <p class="scenario-text">
-                                <strong>진입 장벽을 최대한 낮춘다.</strong><br>
-                                회원가입·앱 설치를 요구하는 순간 이탈이 생깁니다.
-                                링크 하나로 바로 접근해 일정을 입력하고, 결과를 공유할 수 있도록
-                                모든 기능을 비로그인 기반으로 설계했습니다.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="project-section">
-                        <h4 class="project-section-title">프로젝트 링크</h4>
-                        <div style="display: flex; gap: var(--space-md); flex-wrap: wrap;">
-                            <a href="https://github.com/soyeon23/see-you-when" target="_blank" class="btn btn-secondary" style="display: inline-flex;">
-                                GitHub
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                    <path d="M6 3H3V13H13V10M9 3H13M13 3V7M13 3L7 9" stroke="currentColor"
-                                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
-                            </a>
-                            <a href="https://see-you-when.vercel.app/" target="_blank" class="btn btn-primary" style="display: inline-flex;">
-                                Web
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                    <path d="M6 3H3V13H13V10M9 3H13M13 3V7M13 3L7 9" stroke="currentColor"
-                                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="accordion-item">
-                        <button class="accordion-header">
-                            <span>구현 방식 보기</span>
-                            <svg class="accordion-icon" viewBox="0 0 20 20" fill="none">
-                                <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5"
-                                    stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </button>
-                        <div class="accordion-content">
-                            <div class="accordion-body">
-                                <p>
-                                    <strong>사용 기술:</strong> Next.js, Supabase, 카카오맵 API<br>
-                                    <strong>배포:</strong> Vercel<br>
-                                    <strong>핵심 기능:</strong> 달력 기반 일정 조율, 참여자 출발지 기준 중간 장소 자동 추천, 비로그인 모임 생성·공유<br>
-                                    <strong>설계 원칙:</strong> 회원가입 없이 링크로 즉시 사용 가능한 제로 마찰 UX
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
+            </div><!-- /.build-group[data-group="data"] -->
 
         </div>
     </section>

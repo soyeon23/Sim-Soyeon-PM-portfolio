@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Work-Life Logic | 심소연 PM Portfolio</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230057ff'/%3E%3Ctext x='16' y='23' font-family='Arial, sans-serif' font-size='19' font-weight='700' fill='white' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+    <title>Thinking | 심소연 - AI-native R&D & Product Builder</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/pages.css">
     <link rel="stylesheet" href="css/work-life-logic.css">
@@ -19,8 +21,8 @@
             <ul class="nav-menu">
                 <li><a href="index.html" class="nav-link">Overview</a></li>
                 <li><a href="career.html" class="nav-link">Career</a></li>
-                <li><a href="projects.html" class="nav-link">Projects</a></li>
-                <li><a href="work-life-logic.html" class="nav-link active">Work-Life Logic</a></li>
+                <li><a href="projects.html" class="nav-link">Build Lab</a></li>
+                <li><a href="work-life-logic.html" class="nav-link active">Thinking</a></li>
                 <li><a href="resume.html" class="nav-link">Resume</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
@@ -34,8 +36,8 @@
     <!-- Page Header -->
     <header class="page-header">
         <div class="container">
-            <span class="page-label">How I Learn & Improve</span>
-            <h1 class="page-title">Work-Life Logic</h1>
+            <span class="page-label">THINKING</span>
+            <h1 class="page-title">문제를 구조화하는 습관은 일과 삶을 가리지 않습니다</h1>
         </div>
     </header>
 
@@ -48,6 +50,8 @@
                 </blockquote>
                 <p class="wll-intro-text">
                     업무 밖에서도 저만의 판단 기준을 세우고, 개선점을 찾아 다음에 반영하는 과정을 즐깁니다.
+                    R&D와 제품을 만들 때 쓰는 사고방식은 업무 밖에서도 똑같이 작동합니다 —
+                    이 페이지는 그 증거입니다.
                 </p>
             </div>
         </div>
@@ -68,33 +72,61 @@
                     <p class="wll-card-tagline">"데이터로 굽는 재현 가능한 맛"</p>
                 </div>
 
+                <div class="wll-card-media">
+                    <div class="wll-media-slot">
+                        <img src="images/baking 1.jpg" alt="Baking 1" loading="lazy">
+                    </div>
+                    <div class="wll-media-slot">
+                        <img src="images/baking 2.jpg" alt="Baking 2" loading="lazy">
+                    </div>
+                </div>
+
                 <div class="wll-card-body">
                     <div class="wll-card-content">
-                        <div class="wll-logic-grid">
-                            <div class="wll-logic-item">
-                                <span class="wll-logic-label">Intent</span>
-                                <p class="wll-logic-text">"맛있다"는 감상에서 끝나지 않고, 다음에도 같은 맛을 낼 수 있도록 <strong>재현 가능한 레시피</strong>를 만드는 게 목표입니다.</p>
+                        <div class="structure-builder" data-structure>
+                            <div class="structure-builder-head">
+                                <span class="structure-builder-label">Walk through the structure</span>
+                                <button class="structure-builder-trigger" type="button" aria-expanded="false"
+                                    data-label-default="Intent 클릭해서 구조 조립하기" data-label-active="구조 접기">
+                                    <span class="structure-builder-trigger-label">Intent 클릭해서 구조 조립하기</span>
+                                    <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                                        <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </button>
                             </div>
-                            <div class="wll-logic-item">
-                                <span class="wll-logic-label">Logic</span>
-                                <p class="wll-logic-text"><strong>식감, 보관성, 나눠주기 좋은 형태</strong>를 기준으로 정하고, 재료 비율과 순서를 조정합니다.</p>
+                            <div class="structure-nodes">
+                                <div class="structure-node">
+                                    <div class="structure-node-head">
+                                        <span class="structure-node-index">01</span>
+                                        <span class="structure-node-title">Intent</span>
+                                    </div>
+                                    <p class="structure-node-body">"맛있다"는 감상에서 끝나지 않고, 다음에도 같은 맛을 낼 수 있도록 <strong>재현 가능한 레시피</strong>를 만드는 게 목표</p>
+                                </div>
+                                <div class="structure-node">
+                                    <div class="structure-node-head">
+                                        <span class="structure-node-index">02</span>
+                                        <span class="structure-node-title">Logic</span>
+                                    </div>
+                                    <p class="structure-node-body"><strong>식감, 보관성, 나눠주기 좋은 형태</strong>를 기준으로 재료 비율과 순서를 조정</p>
+                                </div>
+                                <div class="structure-node">
+                                    <div class="structure-node-head">
+                                        <span class="structure-node-index">03</span>
+                                        <span class="structure-node-title">Feedback Loop</span>
+                                    </div>
+                                    <p class="structure-node-body">시식 후 받은 피드백을 바탕으로 다음 시도에서 비율과 순서를 조정</p>
+                                </div>
+                                <div class="structure-node is-highlight">
+                                    <div class="structure-node-head">
+                                        <span class="structure-node-index">04</span>
+                                        <span class="structure-node-title">Transfer</span>
+                                    </div>
+                                    <p class="structure-node-body">
+                                        서비스 기획에서도 일시적인 만족보다 <strong>재방문율</strong>과 <strong>행동 변화</strong>를 기준으로 설계를 개선<br>
+                                        <a href="projects.html#project-churn" class="selected-work-link">Related Work: 초기 이탈 원인 분석 →</a>
+                                    </p>
+                                </div>
                             </div>
-                            <div class="wll-logic-item">
-                                <span class="wll-logic-label">Feedback Loop</span>
-                                <p class="wll-logic-text">시식 후 받은 피드백을 바탕으로 다음 시도에서 비율과 순서를 조정합니다.</p>
-                            </div>
-                            <div class="wll-logic-item wll-logic-transfer">
-                                <span class="wll-logic-label">Transfer</span>
-                                <p class="wll-logic-text">서비스 기획에서도 일시적인 만족보다 <strong>재방문율</strong>과 <strong>행동 변화</strong>를 기준으로 설계를 개선합니다.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="wll-card-images">
-                        <div class="wll-image-slot">
-                            <img src="images/baking 1.jpg" alt="Baking 1" loading="lazy">
-                        </div>
-                        <div class="wll-image-slot">
-                            <img src="images/baking 2.jpg" alt="Baking 2" loading="lazy">
                         </div>
                     </div>
                 </div>
@@ -111,37 +143,65 @@
                     <p class="wll-card-tagline">"불확실성을 통제하는 MVP 전략"</p>
                 </div>
 
+                <div class="wll-card-media">
+                    <div class="wll-media-slot wll-media-slot-video">
+                        <video autoplay loop muted playsinline>
+                            <source src="images/car camping 1.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="wll-media-slot wll-media-slot-video">
+                        <video autoplay loop muted playsinline>
+                            <source src="images/car camping 2.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+
                 <div class="wll-card-body">
                     <div class="wll-card-content">
-                        <div class="wll-logic-grid">
-                            <div class="wll-logic-item">
-                                <span class="wll-logic-label">Intent</span>
-                                <p class="wll-logic-text">모든 걸 준비하느라 출발도 못 하기보다, 최소한만 갖추고 <strong>현장에서 대응</strong>하는 방식을 선호합니다.</p>
+                        <div class="structure-builder" data-structure>
+                            <div class="structure-builder-head">
+                                <span class="structure-builder-label">Walk through the structure</span>
+                                <button class="structure-builder-trigger" type="button" aria-expanded="false"
+                                    data-label-default="Intent 클릭해서 구조 조립하기" data-label-active="구조 접기">
+                                    <span class="structure-builder-trigger-label">Intent 클릭해서 구조 조립하기</span>
+                                    <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                                        <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </button>
                             </div>
-                            <div class="wll-logic-item">
-                                <span class="wll-logic-label">Logic</span>
-                                <p class="wll-logic-text"><strong>이동성(차량), 회복 탄력성(침구), 생존 조건(물/음식)</strong>. 세 가지만 확보되면 나머지는 현장에서 판단하고, 의사결정 피로를 최소화합니다.</p>
+                            <div class="structure-nodes">
+                                <div class="structure-node">
+                                    <div class="structure-node-head">
+                                        <span class="structure-node-index">01</span>
+                                        <span class="structure-node-title">Intent</span>
+                                    </div>
+                                    <p class="structure-node-body">모든 걸 준비하느라 출발도 못 하기보다, 최소한만 갖추고 <strong>현장에서 대응</strong>하는 방식을 선호</p>
+                                </div>
+                                <div class="structure-node">
+                                    <div class="structure-node-head">
+                                        <span class="structure-node-index">02</span>
+                                        <span class="structure-node-title">Logic</span>
+                                    </div>
+                                    <p class="structure-node-body"><strong>이동성(차량), 회복 탄력성(침구), 생존 조건(물/음식)</strong> 세 가지만 확보되면 나머지는 현장에서 판단</p>
+                                </div>
+                                <div class="structure-node">
+                                    <div class="structure-node-head">
+                                        <span class="structure-node-index">03</span>
+                                        <span class="structure-node-title">Feedback Loop</span>
+                                    </div>
+                                    <p class="structure-node-body">너무 많이 챙기면 오히려 피곤해진다는 걸 경험으로 배워, 짐은 줄이고 만족도는 높이는 <strong>경량화</strong>에 집중</p>
+                                </div>
+                                <div class="structure-node is-highlight">
+                                    <div class="structure-node-head">
+                                        <span class="structure-node-index">04</span>
+                                        <span class="structure-node-title">Transfer</span>
+                                    </div>
+                                    <p class="structure-node-body">
+                                        기획 초기에 모든 경우의 수를 고민하며 속도를 늦추지 않고, <strong>핵심 리스크만 제거하고 빠르게 실행한 뒤 개선</strong><br>
+                                        <a href="projects.html#project-seeyouwhen" class="selected-work-link">Related Work: 언제볼래 MVP →</a>
+                                    </p>
+                                </div>
                             </div>
-                            <div class="wll-logic-item">
-                                <span class="wll-logic-label">Feedback Loop</span>
-                                <p class="wll-logic-text">너무 많이 챙기려 하면 오히려 피곤해진다는 걸 경험으로 배웠습니다. 지금은 짐은 줄이고 만족도는 높이는 <strong>경량화</strong>에 집중하고 있습니다.</p>
-                            </div>
-                            <div class="wll-logic-item wll-logic-transfer">
-                                <span class="wll-logic-label">Transfer</span>
-                                <p class="wll-logic-text">기획 초기에 모든 경우의 수를 고민하며 속도를 늦추지 않습니다. <strong>핵심 리스크만 제거하고 빠르게 실행한 뒤 개선</strong>하는 방식으로 일합니다.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="wll-card-images">
-                        <div class="wll-video-slot">
-                            <video autoplay loop muted playsinline>
-                                <source src="images/car camping 1.mp4" type="video/mp4">
-                            </video>
-                        </div>
-                        <div class="wll-video-slot">
-                            <video autoplay loop muted playsinline>
-                                <source src="images/car camping 2.mp4" type="video/mp4">
-                            </video>
                         </div>
                     </div>
                 </div>
@@ -158,33 +218,61 @@
                     <p class="wll-card-tagline">"협업을 유도하는 보이지 않는 설계"</p>
                 </div>
 
+                <div class="wll-card-media">
+                    <div class="wll-media-slot">
+                        <img src="images/facilitation 1.jpg" alt="Facilitation 1" loading="lazy">
+                    </div>
+                    <div class="wll-media-slot">
+                        <img src="images/facilitation2.jpg" alt="Facilitation 2" loading="lazy">
+                    </div>
+                </div>
+
                 <div class="wll-card-body">
                     <div class="wll-card-content">
-                        <div class="wll-logic-grid">
-                            <div class="wll-logic-item">
-                                <span class="wll-logic-label">Intent</span>
-                                <p class="wll-logic-text">관계 형성은 성격 문제가 아니라 <strong>상황 설계의 문제</strong>라고 생각합니다. 낯선 환경에서도 자연스럽게 대화가 시작될 수 있는 계기를 만듭니다.</p>
+                        <div class="structure-builder" data-structure>
+                            <div class="structure-builder-head">
+                                <span class="structure-builder-label">Walk through the structure</span>
+                                <button class="structure-builder-trigger" type="button" aria-expanded="false"
+                                    data-label-default="Intent 클릭해서 구조 조립하기" data-label-active="구조 접기">
+                                    <span class="structure-builder-trigger-label">Intent 클릭해서 구조 조립하기</span>
+                                    <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                                        <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </button>
                             </div>
-                            <div class="wll-logic-item">
-                                <span class="wll-logic-label">Logic</span>
-                                <p class="wll-logic-text">심리적 허들을 낮추는 첫 진입점 설정 → 자연스러운 참여 유도 → 대화가 이어지는 <strong>최소한의 구조 설계</strong></p>
+                            <div class="structure-nodes">
+                                <div class="structure-node">
+                                    <div class="structure-node-head">
+                                        <span class="structure-node-index">01</span>
+                                        <span class="structure-node-title">Intent</span>
+                                    </div>
+                                    <p class="structure-node-body">관계 형성은 성격 문제가 아니라 <strong>상황 설계의 문제</strong>, 낯선 환경에서도 자연스러운 대화 계기를 만듦</p>
+                                </div>
+                                <div class="structure-node">
+                                    <div class="structure-node-head">
+                                        <span class="structure-node-index">02</span>
+                                        <span class="structure-node-title">Logic</span>
+                                    </div>
+                                    <p class="structure-node-body">심리적 허들을 낮추는 첫 진입점 → 자연스러운 참여 유도 → 대화가 이어지는 <strong>최소한의 구조 설계</strong></p>
+                                </div>
+                                <div class="structure-node">
+                                    <div class="structure-node-head">
+                                        <span class="structure-node-index">03</span>
+                                        <span class="structure-node-title">Feedback Loop</span>
+                                    </div>
+                                    <p class="structure-node-body">어떤 계기가 사람들을 움직이게 하는지 관찰하고, 효과적이었던 방식은 다음 상황에 재사용</p>
+                                </div>
+                                <div class="structure-node is-highlight">
+                                    <div class="structure-node-head">
+                                        <span class="structure-node-index">04</span>
+                                        <span class="structure-node-title">Transfer</span>
+                                    </div>
+                                    <p class="structure-node-body">
+                                        다양한 이해관계자가 얽힌 프로젝트에서 <strong>초기 합의점을 형성</strong>하고 <strong>협업의 병목을 해결</strong><br>
+                                        <a href="career.html#project-employment" class="selected-work-link">Related Work: 기업 연계 기반 취업 시스템 구축 →</a>
+                                    </p>
+                                </div>
                             </div>
-                            <div class="wll-logic-item">
-                                <span class="wll-logic-label">Feedback Loop</span>
-                                <p class="wll-logic-text">어떤 계기가 사람들을 움직이게 하는지 관찰하고, 효과적이었던 방식은 다음 상황에 재사용합니다.</p>
-                            </div>
-                            <div class="wll-logic-item wll-logic-transfer">
-                                <span class="wll-logic-label">Transfer</span>
-                                <p class="wll-logic-text">다양한 이해관계자가 얽힌 프로젝트에서 <strong>초기 합의점을 형성</strong>하고, <strong>협업의 병목을 해결</strong>하는 데 같은 방식을 적용합니다.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="wll-card-images">
-                        <div class="wll-image-slot">
-                            <img src="images/facilitation 1.jpg" alt="Facilitation 1" loading="lazy">
-                        </div>
-                        <div class="wll-image-slot">
-                            <img src="images/facilitation2.jpg" alt="Facilitation 2" loading="lazy">
                         </div>
                     </div>
                 </div>

@@ -3,6 +3,23 @@
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Pause off-screen autoplay videos (e.g. Thinking page camping clips) to avoid
+    // needless, always-on motion and resource use
+    const autoplayVideos = document.querySelectorAll('video[autoplay]');
+    if (autoplayVideos.length) {
+        const videoObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.play().catch(() => {});
+                } else {
+                    entry.target.pause();
+                }
+            });
+        }, { threshold: 0.25 });
+
+        autoplayVideos.forEach(video => videoObserver.observe(video));
+    }
+
     // Navigation scroll effect
     const nav = document.getElementById('nav');
     let lastScrollY = window.scrollY;
@@ -107,6 +124,161 @@ document.addEventListener('DOMContentLoaded', () => {
             tabGroup.querySelector(`[data-content="${tabId}"]`).classList.add('active');
         });
     });
+
+    // Structure Builder - click-to-cascade reveal (Problem -> Data -> AI/Build -> KPI -> Structure)
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    document.querySelectorAll('.structure-builder').forEach(builder => {
+        const trigger = builder.querySelector('.structure-builder-trigger');
+        const nodes = builder.querySelectorAll('.structure-node');
+        const labelDefault = trigger ? trigger.dataset.labelDefault || trigger.textContent.trim() : '';
+        const labelActive = trigger ? trigger.dataset.labelActive || labelDefault : '';
+        let revealTimers = [];
+        let isRevealed = false;
+
+        if (!trigger || !nodes.length) return;
+
+        const clearTimers = () => {
+            revealTimers.forEach(t => clearTimeout(t));
+            revealTimers = [];
+        };
+
+        const reveal = () => {
+            clearTimers();
+            nodes.forEach((node, i) => {
+                const delay = prefersReducedMotion ? 0 : i * 180;
+                revealTimers.push(setTimeout(() => node.classList.add('is-revealed'), delay));
+            });
+            isRevealed = true;
+            trigger.classList.add('is-active');
+            trigger.setAttribute('aria-expanded', 'true');
+            trigger.querySelector('.structure-builder-trigger-label').textContent = labelActive;
+        };
+
+        const collapse = () => {
+            clearTimers();
+            nodes.forEach(node => node.classList.remove('is-revealed'));
+            isRevealed = false;
+            trigger.classList.remove('is-active');
+            trigger.setAttribute('aria-expanded', 'false');
+            trigger.querySelector('.structure-builder-trigger-label').textContent = labelDefault;
+        };
+
+        trigger.addEventListener('click', () => {
+            isRevealed ? collapse() : reveal();
+        });
+    });
+
+    // How I Work - toggle evidence links per step
+    document.querySelectorAll('.pattern-evidence-toggle').forEach(toggle => {
+        const evidence = toggle.nextElementSibling;
+        if (!evidence || !evidence.classList.contains('pattern-evidence')) return;
+
+        toggle.addEventListener('click', () => {
+            const isOpen = evidence.classList.toggle('is-open');
+            toggle.setAttribute('aria-expanded', String(isOpen));
+            toggle.firstChild.textContent = isOpen ? '접기 ' : '실제 사례 보기 ';
+        });
+    });
+
+    // Generic: click a tag to highlight related card(s) elsewhere on the page
+    const initTagHighlight = (tagSelector) => {
+        const tags = document.querySelectorAll(tagSelector);
+        if (!tags.length) return;
+
+        const activate = (tag) => {
+            const alreadySelected = tag.classList.contains('is-selected');
+
+            tags.forEach(t => t.classList.remove('is-selected'));
+            tags.forEach(t => {
+                t.dataset.related.split(' ').forEach(id => {
+                    const el = document.getElementById(id);
+                    if (el) el.classList.remove('is-highlighted');
+                });
+            });
+
+            if (alreadySelected) return;
+
+            const relatedIds = tag.dataset.related.split(' ');
+
+            tag.classList.add('is-selected');
+            let firstEl = null;
+
+            relatedIds.forEach(id => {
+                const el = document.getElementById(id);
+                if (el) {
+                    el.classList.add('is-highlighted');
+                    if (!firstEl) firstEl = el;
+                }
+            });
+
+            if (firstEl) {
+                firstEl.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'center' });
+            }
+        };
+
+        tags.forEach(tag => {
+            tag.addEventListener('click', () => activate(tag));
+            tag.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    activate(tag);
+                }
+            });
+        });
+    };
+
+    // Capability Map (Home) - click a capability tag to highlight related Selected Work
+    initTagHighlight('.capability-list li[data-related]');
+
+    // Career Overview - click a domain/skill tag to highlight related case studies
+    initTagHighlight('.overview-tags .tag[data-related]');
+
+    // Career - toggle full narrative (Context/Role/Key Decision detail + output image) on standard cases
+    document.querySelectorAll('.career-detail-toggle').forEach(toggle => {
+        const detail = toggle.nextElementSibling;
+        const labelDefault = toggle.dataset.labelDefault;
+        const labelActive = toggle.dataset.labelActive;
+        if (!detail || !detail.classList.contains('career-detail')) return;
+
+        toggle.addEventListener('click', () => {
+            const isOpen = detail.classList.toggle('is-open');
+            toggle.setAttribute('aria-expanded', String(isOpen));
+            toggle.querySelector('.career-detail-toggle-label').textContent = isOpen ? labelActive : labelDefault;
+        });
+    });
+
+    // Build Lab category filter (keeps Project TOC and group headers in sync)
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card[data-category]');
+    const tocItems = document.querySelectorAll('.toc-item[data-category]');
+    const buildGroups = document.querySelectorAll('.build-group');
+
+    if (filterButtons.length && projectCards.length) {
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                const filter = button.dataset.filter;
+                const matches = (el) => filter === 'all' || el.dataset.category.split(' ').includes(filter);
+
+                projectCards.forEach(card => { card.hidden = !matches(card); });
+                tocItems.forEach(item => { item.hidden = !matches(item); });
+
+                buildGroups.forEach(group => {
+                    const hasVisibleCard = group.querySelector('.project-card:not([hidden])');
+                    const header = group.querySelector('.build-group-header');
+                    if (header) header.hidden = !hasVisibleCard;
+                });
+
+                document.querySelectorAll('.toc-group').forEach(group => {
+                    const hasVisibleItem = group.querySelector('.toc-item:not([hidden])');
+                    group.hidden = !hasVisibleItem;
+                });
+            });
+        });
+    }
 
     // Project TOC sticky shadow effect
     const projectToc = document.querySelector('.project-toc');
